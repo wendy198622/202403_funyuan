@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>永信方圓-增值地段_生活機能篇</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- js -->
+    <!-- <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    
+</head>
+
+<body>
+
+    <section>
+        <header></header>
+        <div class="theme location location-function">
+            <div class="content">
+                <div class="pagetag">
+                    <img src="img/location_pagetag.svg" alt="">
+                </div>
+                <div class="item">
+                    <div class="introduction">
+                        <div class="introtext">
+                            <h2>生活機能全覽</h2>
+                            <hr>
+                            <p>向陽之美，奇岩站詩巷生活</p>
+                        </div>
+                        <div class="map_nav">
+                            <div class="map_nav_list map_nav_list1">享樂生活</div>
+                            <div class="map_nav_list map_nav_list2">交通樞紐</div>
+                            <div class="map_nav_list map_nav_list3">公園休閒</div>
+                            <div class="map_nav_list map_nav_list4">便民設施</div>
+                        </div>
+                        <div class="zoom">
+                            <div class="zoom_list">
+                                <i class="material-icons">add</i>
+                            </div>
+                            <div class="zoom_list">
+                                <i class="material-icons">remove</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map_photo">
+                        <div class="map_photo_bg">
+                            <img src="img/function_map.png" alt="">
+                        </div>
+                        <div class="map_photo_location">
+                            <div class="map_photo_location_box map_photo_location_box1">
+                                <div class="map_photo_location_list map_photo_location1-1">
+                                    <span>北投中繼市場</span>
+                                    <img src="img/location_icon.svg" alt="">
+                                </div>
+                                <div class="map_photo_location_list map_photo_location1-2">
+                                    <span>家樂福超市</span>
+                                    <img src="img/location_icon.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="map_photo_location_box map_photo_location_box2">
+                                <div class="map_photo_location_list map_photo_location2-1">
+                                    <span>捷運奇岩站</span>
+                                    <img src="img/location_icon.svg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="map_photo_location_box map_photo_location_box3">
+                                <div class="map_photo_location_list map_photo_location3-1">
+                                    <span>奇岩一號公園</span>
+                                    <img src="img/location_icon.svg" alt="">
+                                </div>
+                                <div class="map_photo_location_list map_photo_location3-2">
+                                    <span>奇岩二號公園</span>
+                                    <img src="img/location_icon.svg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="map_photo_location_box map_photo_location_box4">
+                                <div class="map_photo_location_list map_photo_location4-1">
+                                    <span>清江國小</span>
+                                    <img src="img/location_icon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup">
+                <div class="inner">
+                    <div class="popup_intro">
+                        <div class="name">北投中繼市場</div>
+                    </div>
+                    <div class="popup_photo swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/function_photo1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/function_photo1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/function_photo1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="popup_close">
+                    <i class="material-icons">close</i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#header').load('page/header.html');
+        $('#footer').load('page/footer.html');
+
+        
+
+        $('.map_nav_list1').on('click', function () {      
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".map_photo_location_box1").addClass('active').siblings().removeClass('active');
+        });
+        $('.map_nav_list2').on('click', function () {      
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".map_photo_location_box2").addClass('active').siblings().removeClass('active');
+        });
+        $('.map_nav_list3').on('click', function () {      
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".map_photo_location_box3").addClass('active').siblings().removeClass('active');
+        });
+        $('.map_nav_list4').on('click', function () {      
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".map_photo_location_box4").addClass('active').siblings().removeClass('active');
+        });
+
+        $('.map_photo_location_list').on('click', function () {
+            $('.popup').addClass('active');
+        });
+
+        $('.popup_close').on('click', function () {
+            $('.popup').removeClass('active');
+        });
+
+
+    })
+
+    var mySwiper = new Swiper ('.swiper-container', {
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+                    clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                },
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+    
+    // $('.map_nav_list').on('click', function () {
+    //     $(this).addClass('active');
+    //     $(this).siblings().removeClass('active');
+    //     // setTimeout(() => {
+    //     //     $('.popup_send').removeClass('is_acted');
+    //     // }, 6000)
+    // });
+
+
+</script>
+
+
+
+</html>

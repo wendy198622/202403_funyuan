@@ -1,0 +1,46 @@
+<div class="mask"></div>
+<div class="logo">
+    <a href="index.html">
+        <img src="./img/logo.svg" alt="">
+    </a>
+</div>
+
+
+<nav>
+    <ul class="nav">
+        <li>
+            <a href="aboutus.html">關於我們</a>
+        </li>
+        <li>
+            <a href="works.html">線上熱銷</a>
+        </li>
+        <li>
+            <a href="news.html">岳陞消息</a>
+        </li>
+        <li>
+            <a href="cases.html">岳陞業績</a>
+        </li>
+        <li>
+            <a href="contactus.html">聯絡我們</a>
+        </li>
+    </ul>
+
+
+    <button id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+
+<Script>
+    $(document).ready(function () {
+
+        $("#menu-toggle").click(function () {
+            $("ul.nav").slideToggle();
+            $("#menu-toggle").toggleClass("active");
+        });
+
+    });
+</Script>

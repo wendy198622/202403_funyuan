@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>永信方圓-增值地段_環境篇</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- js -->
+    <!-- <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    
+</head>
+
+<body>
+
+    <section>
+        <header></header>
+        <div class="theme location location-environment">
+            <div class="content">
+                <div class="pagetag">
+                    <img src="img/location_pagetag.svg" alt="">
+                </div>
+                <div class="item">
+                    <div class="introduction">
+                        <div class="introtext">
+                            <p>地段建設</p>
+                            <h3>超驚艷！<br>台北市唯一生態重劃區就在奇岩站</h3>
+                            <hr>
+                            <ul>
+                                <li>純淨的綠帶、溪流、市中心稀有生態重劃區</li>
+                                <li>鄰居均富均質、環境猶如美式高級住宅區</li>
+                                <li>區域寧靜幽美，錯過無法再遇的難得生活價值</li>
+                                <li>區域內綠覆率高、建築密度低、建築大棟距</li>
+                                <li>區域建物限高約32米，全區住起來視野舒適</li>
+                                <li>學區：清江附設幼園、雙語國小、家樂福、近北投商圈</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="photo swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/environment_photo1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/environment_photo2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/environment_photo1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/environment_photo2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/environment_photo1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+                <div class="decorate">
+                    <img src="img/environment_decorate.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#header').load('page/header.html');
+        $('#footer').load('page/footer.html');
+
+        
+    })
+
+    var mySwiper = new Swiper ('.swiper-container', {
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+                    clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                },
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+
+
+</script>
+
+
+
+</html>

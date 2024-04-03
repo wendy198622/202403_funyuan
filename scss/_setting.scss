@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.material-icons{
+  @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+      src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+        url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+        url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+    }
+}
+
+$primary-color: #EA6518;
+$secondary-color: #b28247;
+$fonts-color: #40220f;
+$fonts-color2: #604C3F;
+
+$_font-sans: "Noto Sans TC", sans-serif;
+$_font-serif: "Noto Serif TC", serif;
+
+.pc{ display: block !important;}
+.mob{ display: none !important;}
+@media (max-width:800px) {
+    .pc{ display: none !important;}
+    .mob{ display: block !important;}
+}
+
+body{ font-family: $_font-sans;}
+*{ box-sizing: border-box;}
+a, a:hover, a:active, a:visited{ 
+  color: $fonts-color; 
+  text-decoration: none; 
+  display: block; 
+  transition: all .3s; 
+  outline: 0;
+}
+img{ width: 100%; display: block;}
+
+
+input, button, textarea{
+  appearance:none;   
+  -moz-appearance:none;   
+  -webkit-appearance:none; 
+  -ms-appearance:none; 
+  border: 0;
+  padding: 10px 20px;
+  position: relative;
+}

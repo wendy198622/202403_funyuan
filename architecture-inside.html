@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>永信方圓-建築設計_空間規劃</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- js -->
+    <!-- <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    
+</head>
+
+<body>
+
+    <section>
+        <header></header>
+        <div class="theme architecture architecture-inside">
+            <div class="content">
+                <div class="plan js_height">
+                    <div class="title">
+                        <img src="img/inside_title.svg" alt="">
+                    </div>
+                    <ul class="floor">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="zoom">
+                        <div class="zoom_list">
+                            <i class="material-icons">add</i>
+                        </div>
+                        <!-- <div class="zoom_list">
+                            <i class="material-icons">remove</i>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="photo js_height">
+                    <div class="item active"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <!-- <img src="img/inside_photo1.svg" alt=""> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#header').load('page/header.html');
+        $('#footer').load('page/footer.html');
+
+        var max = 0;
+        $('.js_height').each(function (T) {
+            T = $(this).outerHeight(), T > max && (max = T);
+        }).outerHeight(max);
+
+        $('.floor li').on('click', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+
+        $('.floor li:nth-child(1)').on('click', function () {
+            $('.photo .item:nth-child(1)').addClass('active').siblings().removeClass('active');
+        });
+        $('.floor li:nth-child(2)').on('click', function () {
+            $('.photo .item:nth-child(2)').addClass('active').siblings().removeClass('active');
+        });
+        $('.floor li:nth-child(3)').on('click', function () {
+            $('.photo .item:nth-child(3)').addClass('active').siblings().removeClass('active');
+        });
+        $('.floor li:nth-child(4)').on('click', function () {
+            $('.photo .item:nth-child(4)').addClass('active').siblings().removeClass('active');
+        });
+        $('.floor li:nth-child(5)').on('click', function () {
+            $('.photo .item:nth-child(5)').addClass('active').siblings().removeClass('active');
+        });
+        $('.floor li:nth-child(6)').on('click', function () {
+            $('.photo .item:nth-child(6)').addClass('active').siblings().removeClass('active');
+        });
+        $('.floor li:nth-child(7)').on('click', function () {
+            $('.photo .item:nth-child(7)').addClass('active').siblings().removeClass('active');
+        });
+
+        
+    })
+
+    var mySwiper = new Swiper ('.swiper-container', {
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+                    clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                },
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+
+
+</script>
+
+
+
+</html>

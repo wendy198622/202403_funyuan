@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1.42 147.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_未命名漸層_41);
+      }
+    </style>
+    <linearGradient id="_未命名漸層_41" data-name="未命名漸層 41" x1="916.5" y1="1537.01" x2="1064.21" y2="1537.01" gradientTransform="translate(1537.72 -916.5) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset=".1" stop-color="#ec6a20"/>
+      <stop offset=".5" stop-color="#fffae0"/>
+      <stop offset=".9" stop-color="#ec6a20"/>
+    </linearGradient>
+  </defs>
+  <g id="_字" data-name="字">
+    <rect class="cls-1" y="0" width="1.42" height="147.7"/>
+  </g>
+</svg>

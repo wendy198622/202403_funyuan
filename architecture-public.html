@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>永信方圓-建築設計_大廳梯廳公共空間</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- js -->
+    <!-- <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    
+</head>
+
+<body>
+
+    <section>
+        <header></header>
+        <div class="theme architecture architecture-public">
+            <div class="content">
+                <div class="floor swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide-active">
+                            <div class="toptitle">
+                                <div class="num">
+                                    <img src="img/public_floor1.svg" alt="">
+                                </div>
+                                <div class="line">
+                                    <img src="img/public_line.svg" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <p>COMMUNITY</p>
+                                    <h3>公設介紹</h3>   
+                                    <div class="intro">
+                                        <span>圖片僅為參考，實際依現場合約書內容為準。</span>
+                                        <hr>
+                                        <div class="listbox">
+                                            <div class="list">
+                                                <span>1</span>梯廳
+                                            </div>
+                                        </div>
+                                    </div>                  
+                                </div>
+                            </div>
+                            <div class="photo">
+                                <img src="img/public_photo1.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="toptitle">
+                                <div class="num">
+                                    <img src="img/public_floor2.svg" alt="">
+                                </div>
+                                <div class="line">
+                                    <img src="img/public_line.svg" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <p>COMMUNITY</p>
+                                    <h3>公設介紹</h3>   
+                                    <div class="intro">
+                                        <span>圖片僅為參考，實際依現場合約書內容為準。</span>
+                                        <hr>
+                                        <div class="listbox">
+                                            <div class="list">
+                                                <span>1</span>室內沙發區
+                                            </div>
+                                            <div class="list">
+                                                <span>2</span>景觀戶外休憩區
+                                            </div>
+                                            <div class="list">
+                                                <span>3</span>戶外曬衣架
+                                            </div>
+                                        </div>
+                                    </div>                  
+                                </div>
+                            </div>
+                            <div class="photo">
+                                <img src="img/public_photo2.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="tips">
+                    本圖僅供參考，實際平面依合約書為準，建設公司保留修改設計之權利。
+                </div>
+            </div>
+            <div class="popup">
+                <div class="inner">
+                    <div class="popup_photo">
+                        <div class="group">
+                            <div class="item">
+                                <span class="top">3D情境示意圖</span>
+                                <img src="img/public-popup_photo1.png" alt="">
+                            </div>
+                            <div class="item">
+                                <span class="top">3D情境示意圖</span>
+                                <img src="img/public-popup_photo2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="group">
+                                <div class="item">
+                                    <span class="bottom">3D情境示意圖</span>
+                                    <img src="img/public-popup_photo3.png" alt="">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="popup_intro">
+                        <div class="num">
+                            <img src="img/public_floor1.svg" alt="">
+                        </div>
+                        <div class="name">梯廳</div>
+                    </div>
+                    <div class="popup_card">
+                        <img src="img/public-popup_card1.svg" alt="">
+                    </div>
+                </div>
+                <div class="popup_close">
+                    <img src="img/icon_back.svg" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#header').load('page/header.html');
+        $('#footer').load('page/footer.html');
+
+
+        $('.list').on('click', function () {
+            $('.popup').addClass('active');
+        });
+
+        $('.popup_close').on('click', function () {
+            $('.popup').removeClass('active');
+        });
+    })
+
+    var mySwiper = new Swiper ('.swiper-container', {
+        // If we need pagination
+        effect: 'fade',
+        pagination: {
+            el: '.swiper-pagination',
+                    clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                },
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+
+
+</script>
+
+
+
+</html>
