@@ -1716,7 +1716,7 @@ section .engineering-materials .content .item span {
   bottom: 20px;
   color: #956134;
   font-weight: 100;
-  fonts: 12px;
+  font-size: 12px;
 }
 
 section .engineering-engineering .content .pagetag {
@@ -2262,10 +2262,21 @@ section .construction .popup {
 section .construction .popup .inner {
   width: 100%;
   height: auto;
+  margin: 0;
 }
 
 section .construction .popup .inner .photo {
   width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+}
+
+section .construction .popup .inner .photo.active {
+  display: block;
 }
 
 section .construction .popup .popup_close {

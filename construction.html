@@ -165,19 +165,19 @@
                     </div>
                     <div class="classicproject">
                         <div class="projectgroup">
-                            <div class="item">
+                            <div class="item item1">
                                 <div class="name">駿景大美</div>
                                 <div class="photo">
                                     <img src="img/construction_photo1.png" alt="">
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item item2">
                                 <div class="name">美觀園</div>
                                 <div class="photo">
                                     <img src="img/construction_photo2.png" alt="">
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item item3">
                                 <div class="name">景冠台北</div>
                                 <div class="photo">
                                     <img src="img/construction_photo3.png" alt="">
@@ -185,19 +185,19 @@
                             </div>
                         </div>
                         <div class="projectgroup">
-                            <div class="item">
+                            <div class="item item4">
                                 <div class="name">政大和墅</div> 
                                 <div class="photo">
                                     <img src="img/construction_photo4.png" alt="">
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item item5">
                                 <div class="name">忠聯金鑽</div>
                                 <div class="photo">
                                     <img src="img/construction_photo5.png" alt="">
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item item6">
                                 <div class="name">台北芝加哥<br>財經廣場</div>     
                                 <div class="photo">
                                     <img src="img/construction_photo6.png" alt="">
@@ -208,24 +208,24 @@
             </div>
             <div class="popup">
                 <div class="inner">
-                    <div class="photo">
+                    <div class="photo photo1 active">
                         <img src="img/construction-popup_photo1.png" alt="">
                     </div>
-                    <!-- <div class="photo">
+                    <div class="photo photo2">
                         <img src="img/construction-popup_photo2.png" alt="">
                     </div>
-                    <div class="photo">
+                    <div class="photo photo3">
                         <img src="img/construction-popup_photo3.png" alt="">
                     </div>
-                    <div class="photo">
+                    <div class="photo photo4">
                         <img src="img/construction-popup_photo4.png" alt="">
                     </div>
-                    <div class="photo">
+                    <div class="photo photo5">
                         <img src="img/construction-popup_photo5.png" alt="">
                     </div>
-                    <div class="photo">
+                    <div class="photo photo6">
                         <img src="img/construction-popup_photo6.png" alt="">
-                    </div> -->
+                    </div>
                 </div>
                 <div class="popup_close">
                     <i class="material-icons">close</i>
@@ -244,8 +244,33 @@
         $('#footer').load('page/footer.html');
         
 
-        $('.classicproject .item').on('click', function () {
+        $('.item1').on('click', function () {
             $('.popup').addClass('active');
+            $('.photo1').addClass('active').siblings().removeClass('active');
+        });
+        $('.item2').on('click', function () {
+            $('.popup').addClass('active');
+            $('.photo2').addClass('active').siblings().removeClass('active');
+        });
+        $('.item3').on('click', function () {
+            $('.popup').addClass('active');
+            $('.photo3').addClass('active').siblings().removeClass('active');
+        });
+        $('.item4').on('click', function () {
+            $('.popup').addClass('active');
+            $('.photo4').addClass('active').siblings().removeClass('active');
+        });
+        $('.item5').on('click', function () {
+            $('.popup').addClass('active');
+            $('.photo5').addClass('active').siblings().removeClass('active');
+        });
+        $('.item6').on('click', function () {
+            $('.popup').addClass('active');
+            $('.photo6').addClass('active').siblings().removeClass('active');
+        });
+
+        $('.popup_close').on('click', function () {
+            $('.popup').removeClass('active');
         });
 
         
