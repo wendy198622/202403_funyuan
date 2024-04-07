@@ -84,6 +84,20 @@ section .theme {
   overflow: hidden;
 }
 
+section .theme .pagetag {
+  width: auto;
+  height: 24px;
+  position: absolute;
+  z-index: 10;
+  top: 90px;
+  left: 85px;
+}
+
+section .theme .content {
+  height: 100%;
+  position: relative;
+}
+
 section .theme .zoom {
   margin-top: 100px;
 }
@@ -220,6 +234,10 @@ section .home .content nav ul > li h3 {
           filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.75));
 }
 
+section .home .content nav ul > li h3 a {
+  height: 60px;
+}
+
 section .home .content nav ul > li ol {
   width: 100%;
   display: none;
@@ -298,25 +316,12 @@ section .location {
   position: relative;
 }
 
-section .location .content {
-  height: 100%;
-  position: relative;
-}
-
 section .location .content:before {
   content: "";
   width: 0;
   height: 100%;
   display: inline-block;
   vertical-align: middle;
-}
-
-section .location .content .pagetag {
-  width: calc(206/1920*100%);
-  position: absolute;
-  z-index: 10;
-  top: 90px;
-  left: 85px;
 }
 
 section .location .content .item {
@@ -760,6 +765,207 @@ section .location-function .popup.active {
           transform: scale(1);
 }
 
+section .architecture-outward {
+  background: #F7C88F;
+}
+
+section .architecture-outward .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 32px;
+  padding-right: 0;
+}
+
+section .architecture-outward .content .toggle {
+  width: 64px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+section .architecture-outward .content .toggle > div {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+}
+
+section .architecture-outward .content .toggle .day {
+  display: block;
+}
+
+section .architecture-outward .content .toggle .night {
+  display: none;
+}
+
+section .architecture-outward .content .toggle.active .day {
+  display: none;
+}
+
+section .architecture-outward .content .toggle.active .night {
+  display: block;
+}
+
+section .architecture-outward .content .photo-large {
+  width: calc(880/1920*100%);
+  padding: 16px;
+}
+
+section .architecture-outward .content .photo-large .day .day1 {
+  display: block;
+}
+
+section .architecture-outward .content .photo-large .day .day2 {
+  display: none;
+}
+
+section .architecture-outward .content .photo-large .day.active .day1 {
+  display: none;
+}
+
+section .architecture-outward .content .photo-large .day.active .day2 {
+  display: block;
+}
+
+section .architecture-outward .content .photo-large .night .night1 {
+  display: block;
+}
+
+section .architecture-outward .content .photo-large .night .night2 {
+  display: none;
+}
+
+section .architecture-outward .content .photo-large .night.active .night1 {
+  display: none;
+}
+
+section .architecture-outward .content .photo-large .night.active .night2 {
+  display: block;
+}
+
+section .architecture-outward .content .photo-large .day {
+  display: block;
+}
+
+section .architecture-outward .content .photo-large .night {
+  display: none;
+}
+
+section .architecture-outward .content .photo-large.active .day {
+  display: none;
+}
+
+section .architecture-outward .content .photo-large.active .night {
+  display: block;
+}
+
+section .architecture-outward .content .intro {
+  width: calc(1098/1920*100%);
+  padding: 16px 0;
+  position: relative;
+}
+
+section .architecture-outward .content .intro .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 16px;
+}
+
+section .architecture-outward .content .intro .box .photo-small {
+  width: 32%;
+}
+
+section .architecture-outward .content .intro .box .photo-small .day .day1 {
+  display: none;
+}
+
+section .architecture-outward .content .intro .box .photo-small .day .day2 {
+  display: block;
+}
+
+section .architecture-outward .content .intro .box .photo-small .day.active .day1 {
+  display: block;
+}
+
+section .architecture-outward .content .intro .box .photo-small .day.active .day2 {
+  display: none;
+}
+
+section .architecture-outward .content .intro .box .photo-small .night .night1 {
+  display: none;
+}
+
+section .architecture-outward .content .intro .box .photo-small .night .night2 {
+  display: block;
+}
+
+section .architecture-outward .content .intro .box .photo-small .night.active .night1 {
+  display: block;
+}
+
+section .architecture-outward .content .intro .box .photo-small .night.active .night2 {
+  display: none;
+}
+
+section .architecture-outward .content .intro .box .photo-small .day {
+  display: block;
+}
+
+section .architecture-outward .content .intro .box .photo-small .night {
+  display: none;
+}
+
+section .architecture-outward .content .intro .box .photo-small.active .day {
+  display: none;
+}
+
+section .architecture-outward .content .intro .box .photo-small.active .night {
+  display: block;
+}
+
+section .architecture-outward .content .intro .box .text {
+  width: 65%;
+}
+
+section .architecture-outward .content .intro .box .text h3 {
+  font-size: 36px;
+  line-height: 140%;
+  letter-spacing: 2px;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  color: #40220F;
+  text-align: left;
+}
+
+section .architecture-outward .content .intro .box .text p {
+  font-size: 22px;
+  line-height: 150%;
+  letter-spacing: 3px;
+  color: #956134;
+  text-align: left;
+  margin: 0;
+}
+
 section .architecture-public {
   background: #fffae0;
 }
@@ -1135,6 +1341,8 @@ section .architecture-inside .content .photo .item {
   background-repeat: no-repeat;
   background-size: contain;
   display: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 section .architecture-inside .content .photo .item:nth-child(1) {
@@ -1167,5 +1375,913 @@ section .architecture-inside .content .photo .item:nth-child(7) {
 
 section .architecture-inside .content .photo .item.active {
   display: block;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2), section .architecture-inside .content .photo .item:nth-child(3) {
+  position: relative;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link, section .architecture-inside .content .photo .item:nth-child(3) .link {
+  position: absolute;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link:hover, section .architecture-inside .content .photo .item:nth-child(3) .link:hover {
+  cursor: pointer;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link_a1, section .architecture-inside .content .photo .item:nth-child(3) .link_a1 {
+  width: 38%;
+  height: 0;
+  padding-bottom: 28.5%;
+  right: 22%;
+  top: 12%;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link_a2, section .architecture-inside .content .photo .item:nth-child(3) .link_a2 {
+  width: 31%;
+  height: 0;
+  padding-bottom: 25.2%;
+  right: 22%;
+  bottom: 10%;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link_a3, section .architecture-inside .content .photo .item:nth-child(3) .link_a3 {
+  width: 29%;
+  height: 0;
+  padding-bottom: 25.2%;
+  left: 19%;
+  bottom: 10%;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link_a4, section .architecture-inside .content .photo .item:nth-child(3) .link_a4 {
+  width: 38%;
+  height: 0;
+  padding-bottom: 28.5%;
+  right: 22%;
+  top: 12%;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link_a5, section .architecture-inside .content .photo .item:nth-child(3) .link_a5 {
+  width: 31%;
+  height: 0;
+  padding-bottom: 25.2%;
+  right: 22%;
+  bottom: 10%;
+}
+
+section .architecture-inside .content .photo .item:nth-child(2) .link_a6, section .architecture-inside .content .photo .item:nth-child(3) .link_a6 {
+  width: 29%;
+  height: 0;
+  padding-bottom: 25.2%;
+  left: 19%;
+  bottom: 10%;
+}
+
+section .architecture-inside .popup {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+section .architecture-inside .popup:before {
+  content: "";
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .architecture-inside .popup .inner {
+  width: calc(1600/1920*100%);
+  height: 860px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+section .architecture-inside .popup .inner .toptitle {
+  width: calc(528/1600*100%);
+  background: url("../img/inside-space_bg.svg") top left no-repeat;
+  background-size: cover;
+  padding: 40px 60px;
+  overflow: hidden;
+}
+
+section .architecture-inside .popup .inner .toptitle .num {
+  width: 192px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .architecture-inside .popup .inner .toptitle .line {
+  width: 66px;
+  margin: 60px 0;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox p {
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #fff;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox h3 {
+  font-size: 40px;
+  letter-spacing: 8px;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox .intro > span {
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox .intro hr {
+  width: 240px;
+  border-color: #fff;
+  border-top: 0;
+  padding: 0 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox .intro .listbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox .intro .listbox .list {
+  color: #fff;
+  font-size: 22px;
+  line-height: 160%;
+  letter-spacing: 4px;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox .intro .listbox .list span {
+  width: 22px;
+  height: 22px;
+  line-height: 140%;
+  border-radius: 22px;
+  color: #7F4F21;
+  font-size: 14px;
+  background: #FFFAE0;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 400;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 6px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox .intro .listbox .list:hover {
+  background: #7F4F21;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox ul {
+  margin-top: 200px;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox ul li {
+  color: #fff;
+  font-size: 20px;
+  line-height: 180%;
+  letter-spacing: 2px;
+  font-weight: 300;
+  position: relative;
+  padding-left: 24px;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox ul li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #F7F8B8;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox ul.inline li {
+  display: inline-block;
+  padding: 4px 18px;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 4px;
+  font-weight: 400;
+  border: 1px solid #604C3F;
+  margin-top: 52px;
+  margin-left: 8px;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox ul.inline li::before {
+  display: none;
+}
+
+section .architecture-inside .popup .inner .toptitle .txtbox ul.inline li:first-child {
+  margin-left: 0;
+}
+
+section .architecture-inside .popup .inner .photo {
+  width: calc(1072/1600*100%);
+  margin: 0 auto;
+}
+
+section .architecture-inside .popup.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .engineering-materials {
+  background: #EA5514;
+  padding: 32px;
+}
+
+section .engineering-materials .content {
+  background: #F2E8D1;
+  border-radius: 0 48px;
+  position: relative;
+}
+
+section .engineering-materials .content .item .photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 160px 85px 55px;
+}
+
+section .engineering-materials .content .item .photo .swiper-wrapper {
+  width: calc(100% - 360px);
+  overflow: hidden;
+}
+
+section .engineering-materials .content .item .photo .swiper-wrapper .swiper-slide {
+  width: 100% !important;
+  opacity: 0 !important;
+  background: #F2E8D1;
+}
+
+section .engineering-materials .content .item .photo .swiper-wrapper .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}
+
+section .engineering-materials .content .item .photo .swiper-pagination {
+  width: 240px;
+  position: static;
+  bottom: unset;
+  left: unset;
+  background: #EA5514;
+  padding: 32px;
+}
+
+section .engineering-materials .content .item .photo .swiper-pagination .swiper-pagination-bullet {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  text-align: left;
+  vertical-align: middle;
+  background: transparent;
+  opacity: 1;
+  font-size: 20px;
+  line-height: 2.2;
+  color: #F2E8D1;
+  letter-spacing: 2px;
+  font-weight: 200;
+  position: relative;
+}
+
+section .engineering-materials .content .item .photo .swiper-pagination .swiper-pagination-bullet-active {
+  color: #fff;
+  font-weight: 600;
+  padding-left: 20px;
+}
+
+section .engineering-materials .content .item .photo .swiper-pagination .swiper-pagination-bullet-active:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+section .engineering-materials .content .item span {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #956134;
+  font-weight: 100;
+  fonts: 12px;
+}
+
+section .engineering-engineering .content .pagetag {
+  z-index: 20;
+}
+
+section .engineering-engineering .content .item {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .engineering-engineering .content .item .photogroup {
+  background: url(../img/engineering_bg1.png) left top no-repeat;
+  background-size: cover;
+  width: calc(1242/1920*100%);
+  position: relative;
+}
+
+section .engineering-engineering .content .item .photogroup .photo {
+  width: calc(897/1242*100%);
+  margin: 10% auto 0;
+  position: relative;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .linka {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .linka:hover {
+  cursor: pointer;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a1 {
+  top: 14%;
+  left: 26.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a2 {
+  top: 23%;
+  left: 37%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a3 {
+  top: 27.5%;
+  left: 50%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a4 {
+  top: 31.5%;
+  left: 20.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a5 {
+  top: 39%;
+  left: 49%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a6 {
+  top: 47%;
+  left: 20.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a7 {
+  top: 55%;
+  left: 21.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a8 {
+  top: 51.5%;
+  left: 57.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a9 {
+  top: 68.5%;
+  left: 75.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a10 {
+  top: 73%;
+  left: 61%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a11 {
+  top: 79%;
+  left: 20.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a12 {
+  top: 83.5%;
+  left: 26%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a13 {
+  top: 83.5%;
+  left: 50%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a14 {
+  top: 82.5%;
+  left: 64.5%;
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .a15 {
+  top: 90%;
+  left: 50%;
+}
+
+section .engineering-engineering .content .item .introduction {
+  background: url(../img/engineering_bg2.png) right top no-repeat;
+  background-size: cover;
+  width: calc(678/1920*100%);
+  padding: 100px 85px;
+}
+
+section .engineering-engineering .content .item .introduction .introtext {
+  margin-top: 120px;
+}
+
+section .engineering-engineering .content .item .introduction .introtext p {
+  color: #EA6518;
+  font-size: 20px;
+  line-height: 180%;
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+
+section .engineering-engineering .content .item .introduction .introtext h3 {
+  color: #40220F;
+  font-family: "Noto Serif TC", serif;
+  font-size: 38px;
+  line-height: 140%;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+section .engineering-engineering .content .item .introduction .introtext hr {
+  width: calc(48/627*100%);
+  margin: 52px 0;
+  border-color: #40220F;
+}
+
+section .engineering-engineering .content .item .introduction .introtext ul li {
+  width: 32%;
+  color: #604C3F;
+  font-size: 22px;
+  line-height: 180%;
+  letter-spacing: 2px;
+  font-weight: 200;
+  position: relative;
+  padding-left: 0;
+  display: inline-block;
+}
+
+section .engineering-engineering .content .item .introduction .introtext ul li.active {
+  padding-left: 24px;
+  font-weight: 600;
+}
+
+section .engineering-engineering .content .item .introduction .introtext ul li.active::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #40220F;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+}
+
+section .engineering-engineering .content .item .introduction .introtext ul li:hover {
+  cursor: pointer;
+}
+
+section .engineering-engineering .content .item .introstep {
+  width: calc(942/1920*100%);
+  position: absolute;
+  right: 0;
+  bottom: 72px;
+}
+
+section .engineering-engineering .popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: url(../img/engineering-popup_bg.png) center center no-repeat;
+  background-size: cover;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+section .engineering-engineering .popup .inner {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 100px 85px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .engineering-engineering .popup .inner .popup_intro {
+  width: calc(460/1920*100%);
+  height: 100%;
+}
+
+section .engineering-engineering .popup .inner .popup_intro .tag {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #EB6519;
+}
+
+section .engineering-engineering .popup .inner .popup_intro .name {
+  font-size: 40px;
+  line-height: 140%;
+  letter-spacing: 6px;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  color: #40220F;
+  margin: 0 auto;
+}
+
+section .engineering-engineering .popup .inner .popup_intro .note {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #AC9885;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+section .engineering-engineering .popup .inner .popup_intro .note span {
+  font-size: 0.8em;
+  display: block;
+  letter-spacing: 0;
+}
+
+section .engineering-engineering .popup .inner .popup_intro hr {
+  width: 48px;
+  margin: 52px 0;
+  border-color: #40220F;
+}
+
+section .engineering-engineering .popup .inner .popup_intro p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-top: 10px;
+  color: #604C3F;
+}
+
+section .engineering-engineering .popup .inner .popup_photo {
+  width: calc(1200/1920*100%);
+}
+
+section .engineering-engineering .popup .inner .swiper-button-prev {
+  width: 48px;
+  height: 48px;
+  left: 85px;
+  top: auto;
+  bottom: 25%;
+  background-image: url(../img/arrow_left3.svg);
+  background-size: contain;
+}
+
+section .engineering-engineering .popup .inner .swiper-button-next {
+  width: 48px;
+  height: 48px;
+  right: auto;
+  left: 150px;
+  top: auto;
+  bottom: 25%;
+  background-image: url(../img/arrow_right3.svg);
+  background-size: contain;
+}
+
+section .engineering-engineering .popup .popup_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+  z-index: 12;
+}
+
+section .engineering-engineering .popup .popup_close:hover {
+  cursor: pointer;
+}
+
+section .engineering-engineering .popup.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .construction {
+  background: url(../img/construction_bg.png) center top no-repeat;
+  background-size: cover;
+}
+
+section .construction .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 160px 85px 100px;
+}
+
+section .construction .content .inner {
+  width: 50%;
+  margin: 20px;
+}
+
+section .construction .content .inner .spirit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+section .construction .content .inner .spirit img {
+  width: calc(108/800*100%);
+}
+
+section .construction .content .inner .spirit img:first-child {
+  width: calc(330/800*100%);
+}
+
+section .construction .content .inner .intro {
+  margin-top: 20px;
+}
+
+section .construction .content .inner .intro h3 {
+  font-size: 32px;
+  line-height: 2;
+  color: #F7F8B8;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+section .construction .content .inner .intro p {
+  width: 100%;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 200;
+  margin-top: 10px;
+}
+
+section .construction .content .inner .oldproject {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .construction .content .inner .oldproject .projectgroup {
+  width: calc(100% / 3);
+}
+
+section .construction .content .inner .oldproject .projectgroup .item {
+  margin-bottom: 6px;
+}
+
+section .construction .content .inner .oldproject .projectgroup .item > div {
+  display: inline-block;
+}
+
+section .construction .content .inner .oldproject .projectgroup .item .year {
+  width: 78px;
+  font-size: 16px;
+  line-height: 34px;
+  background-color: #F7F8B8;
+  color: #EA6518;
+  border-radius: 20px;
+  padding: 0 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+section .construction .content .inner .oldproject .projectgroup .item .area {
+  font-size: 19px;
+  line-height: 1.3;
+  color: #F7F8B8;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin: 0 6px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+section .construction .content .inner .oldproject .projectgroup .item .name {
+  font-size: 21px;
+  line-height: 34px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+section .construction .content .inner .classicproject {
+  width: 100%;
+}
+
+section .construction .content .inner .classicproject .projectgroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .construction .content .inner .classicproject .projectgroup .item {
+  margin: 10px;
+  position: relative;
+}
+
+section .construction .content .inner .classicproject .projectgroup .item .name {
+  font-size: 21px;
+  color: #F7F8B8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 10;
+  letter-spacing: 4px;
+}
+
+section .construction .content .inner .classicproject .projectgroup .item .photo:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+section .construction .content .inner .classicproject .projectgroup .item:hover {
+  cursor: pointer;
+}
+
+section .construction .content .inner .classicproject .projectgroup .item:hover .name {
+  opacity: 0;
+}
+
+section .construction .content .inner .classicproject .projectgroup .item:hover .photo:before {
+  opacity: 0;
+}
+
+section .construction .content .inner .title {
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #F7F8B8;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+section .construction .content .inner .title img {
+  width: calc(100% - 200px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+section .construction .popup {
+  width: 100%;
+  height: 100%;
+  background: url(../img/construction-popup_bg.png) center center no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+section .construction .popup .inner {
+  width: 100%;
+  height: auto;
+}
+
+section .construction .popup .inner .photo {
+  width: 100%;
+}
+
+section .construction .popup .popup_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+  z-index: 12;
+}
+
+section .construction .popup .popup_close:hover {
+  cursor: pointer;
+}
+
+section .construction .popup.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 /*# sourceMappingURL=style.css.map */

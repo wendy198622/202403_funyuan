@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>永信方圓-頂級配備_建材重點</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- js -->
+    <!-- <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
+	<!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
+
+<body>
+
+    <section>
+        <header></header>
+        <div class="theme engineering engineering-materials">
+            <div class="content">
+                <div class="pagetag">
+                    <img src="img/buildingmaterials_pagetag.svg" alt="">
+                </div>
+                <div class="item">
+                    <div class="photo swiper-container">
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/materials_window1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_bathroom5.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_kitchen1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_champion1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_door.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_philips.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_water.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_talkie.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_elevator.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_etag.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/materials_parking.png" alt="">
+                            </div>
+                        </div>
+                        <!-- <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div> -->
+                    </div>
+                    <span>建材圖片僅供示意，實際依合約書為準。</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#header').load('page/header.html');
+        $('#footer').load('page/footer.html');
+        
+        
+        var keys = ['永欣鋁門窗', 'TOTO衛浴', '櫻花廚具', '冠軍建材', '金亞玄關門', '飛利浦電子鎖', 'BWT淨水設備', '對講設備', '三菱電梯', '車道系統', '機械車位'];
+
+        var mySwiper = new Swiper('.swiper-container', {
+            effect: 'fade',
+            speed: 3000,
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false
+            // },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<div class="' + className + '">' + (keys[index]) + 
+                    '</div>';
+                },
+            }
+        });
+    })
+
+
+</script>
+
+
+
+</html>

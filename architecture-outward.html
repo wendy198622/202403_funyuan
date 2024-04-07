@@ -26,52 +26,53 @@
     <section>
         <header></header>
         <div class="theme architecture architecture-outward">
-            <!-- <div class="content">
-                <div class="pagetag">
-                    <img src="img/location_pagetag.svg" alt="">
-                </div>
-                <div class="item">
-                    <div class="introduction">
-                        <div class="introtext">
-                            <p>地段建設</p>
-                            <h3>超驚艷！<br>台北市唯一生態重劃區就在奇岩站</h3>
-                            <hr>
-                            <ul>
-                                <li>純淨的綠帶、溪流、市中心稀有生態重劃區</li>
-                                <li>鄰居均富均質、環境猶如美式高級住宅區</li>
-                                <li>區域寧靜幽美，錯過無法再遇的難得生活價值</li>
-                                <li>區域內綠覆率高、建築密度低、建築大棟距</li>
-                                <li>區域建物限高約32米，全區住起來視野舒適</li>
-                                <li>學區：清江附設幼園、雙語國小、家樂福、近北投商圈</li>
-                            </ul>
-                        </div>
+            <div class="bg"></div>
+            <div class="content">
+                <div class="toggle">
+                    <div class="day">
+                        <img src="img/outward-toggle-day.svg" alt="">
                     </div>
-                    <div class="photo swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="img/environment_photo1.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="img/environment_photo2.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="img/environment_photo1.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="img/environment_photo2.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="img/environment_photo1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                    <div class="night">
+                        <img src="img/outward-toggle-night.svg" alt="">
                     </div>
                 </div>
-                <div class="decorate">
-                    <img src="img/environment_decorate.svg" alt="">
+                <div class="photo-large">
+                    <div class="day">
+                        <img class="day1" src="img/outward-photo-day1.jpg" alt="">
+                        <img class="day2" src="img/outward-photo-day2.jpg" alt="">
+                    </div>
+                    <div class="night">
+                        <img class="night1" src="img/outward-photo-night1.jpg" alt="">
+                        <img class="night2" src="img/outward-photo-night2.jpg" alt="">
+                    </div>
                 </div>
-            </div> -->
+                <div class="intro">
+                    <div class="title">
+                        <img src="img/outward_title.svg" alt="">
+                    </div>
+                    <div class="box">
+                        <div class="photo-small">
+                            <div class="day">
+                                <img class="day1" src="img/outward-photo-day1.jpg" alt="">
+                                <img class="day2" src="img/outward-photo-day2.jpg" alt="">
+                            </div>
+                            <div class="night">
+                                <img class="night1" src="img/outward-photo-night1.jpg" alt="">
+                                <img class="night2" src="img/outward-photo-night2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h3>建築專注結構究極之美</h3>
+                            <p>穩重大器設計形塑現代感俐落線條，<br>
+                                流暢融入天際線。<br>
+                                水平大面窗讓視野更佳，<br>
+                                低調沈穩色彩優雅沁入環境。<br>
+                                夜間燈光為天空注入一道浪漫之光，<br>
+                                讓您住家充滿魅力！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -84,6 +85,16 @@
         $('#header').load('page/header.html');
         $('#footer').load('page/footer.html');
 
+        $('.toggle').on('click', function () {
+            $(this).toggleClass('active');
+            $('.photo-large').toggleClass('active');
+            $('.photo-small').toggleClass('active');
+        });
+
+        $('.photo-small').on('click', function () {
+            $('.photo-small .day, .photo-large .day').toggleClass('active');
+            $('.photo-small .night, .photo-large .night').toggleClass('active');
+        });
         
     })
 

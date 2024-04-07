@@ -32,8 +32,8 @@
                         <img src="img/inside_title.svg" alt="">
                     </div>
                     <ul class="floor">
-                        <li class="active"></li>
                         <li></li>
+                        <li class="active"></li>
                         <li></li>
                         <li></li>
                         <li></li>
@@ -50,14 +50,109 @@
                     </div>
                 </div>
                 <div class="photo js_height">
-                    <div class="item active"></div>
                     <div class="item"></div>
-                    <div class="item"></div>
+                    <div class="item active">
+                        <div class="link link_a1"></div>
+                        <div class="link link_a2"></div>
+                        <div class="link link_a3"></div>
+                    </div>
+                    <div class="item">
+                        <div class="link link_a4"></div>
+                        <div class="link link_a5"></div>
+                        <div class="link link_a6"></div>
+                    </div>
                     <div class="item"></div>
                     <div class="item"></div>
                     <div class="item"></div>
                     <div class="item"></div>
                     <!-- <img src="img/inside_photo1.svg" alt=""> -->
+                </div>
+            </div>
+            <div class="popup popup_A1">
+                <div class="inner">
+                    <div class="toptitle">
+                        <div class="num">
+                            <img src="img/inside-space_a1.svg" alt="">
+                        </div>
+                        <div class="line">
+                            <img src="img/inside-space_line.svg" alt="">
+                        </div>
+                        <div class="txtbox">
+                            <p>FURNITURE SPACE</p>
+                            <h3>平面配置參考圖</h3>   
+                            <div class="intro">
+                                <span>此為傢俱配置參考圖，實際依現場合約書內容為準。</span>
+                            </div>
+                            <ul>
+                                <li>寬敞主臥，空間舒適好用</li>
+                                <li>乾濕分離衛浴，乾爽舒適</li>
+                                <li>開放式客臥交誼空間，可泡茶可當書房</li>
+                                <li>L型廚房空間，收納充分好用</li>
+                                <li>工作陽台，高效能方正配置</li>
+                            </ul>            
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="img/inside-popup_photoa1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="popup popup_A2">
+                <div class="inner">
+                    <div class="toptitle">
+                        <div class="num">
+                            <img src="img/inside-space_a2.svg" alt="">
+                        </div>
+                        <div class="line">
+                            <img src="img/inside-space_line.svg" alt="">
+                        </div>
+                        <div class="txtbox">
+                            <p>FURNITURE SPACE</p>
+                            <h3>平面配置參考圖</h3>   
+                            <div class="intro">
+                                <span>此為傢俱配置參考圖，實際依現場合約書內容為準。</span>
+                            </div>
+                            <ul>
+                                <li>寬敞主臥，空間舒適好用</li>
+                                <li>乾濕分離衛浴，乾爽舒適</li>
+                                <li>開放式客臥交誼空間，可泡茶可當書房</li>
+                                <li>L型廚房空間，收納充分好用</li>
+                                <li>工作陽台，高效能方正配置</li>
+                            </ul>            
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="img/inside-popup_photoa2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="popup popup_A3">
+                <div class="inner">
+                    <div class="toptitle">
+                        <div class="num">
+                            <img src="img/inside-space_a3.svg" alt="">
+                        </div>
+                        <div class="line">
+                            <img src="img/inside-space_line.svg" alt="">
+                        </div>
+                        <div class="txtbox">
+                            <p>FURNITURE SPACE</p>
+                            <h3>平面配置參考圖</h3>   
+                            <div class="intro">
+                                <span>此為傢俱配置參考圖，實際依現場合約書內容為準。</span>
+                            </div>
+                            <ul>
+                                <li>寬敞主臥，空間舒適好用</li>
+                                <li>乾濕分離衛浴，乾爽舒適</li>
+                                <li>開放式客臥交誼空間，可泡茶可當書房</li>
+                                <li>L型廚房空間，收納充分好用</li>
+                                <li>工作陽台，高效能方正配置</li>
+                            </ul>            
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="img/inside-popup_photoa3.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,6 +197,70 @@
         $('.floor li:nth-child(7)').on('click', function () {
             $('.photo .item:nth-child(7)').addClass('active').siblings().removeClass('active');
         });
+
+
+        $('.link_a1').hover(
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo2-hoverA1.svg")');
+            },
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo2.svg")');
+            }
+        );
+        $('.link_a2').hover(
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo2-hoverA2.svg")');
+            },
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo2.svg")');
+            }
+        );
+        $('.link_a3').hover(
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo2-hoverA3.svg")');
+            },
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo2.svg")');
+            }
+        );
+        $('.link_a4').hover(
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo3-hoverA1.svg")');
+            },
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo3.svg")');
+            }
+        );
+        $('.link_a5').hover(
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo3-hoverA2.svg")');
+            },
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo3.svg")');
+            }
+        );
+        $('.link_a6').hover(
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo3-hoverA3.svg")');
+            },
+            function() {
+                $('.item.active').css('background-image', 'url("../img/inside_photo3.svg")');
+            }
+        );
+
+        $('.link_a1, .link_a4').on('click', function () {
+            $('.popup_A1').addClass('active');
+        });
+        $('.link_a2, .link_a5').on('click', function () {
+            $('.popup_A2').addClass('active');
+        });
+        $('.link_a3, .link_a6').on('click', function () {
+            $('.popup_A3').addClass('active');
+        });
+        $('.popup').on('click', function () {
+            $('.popup').removeClass('active');
+        });
+
 
         
     })
