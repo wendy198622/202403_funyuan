@@ -72,6 +72,7 @@
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
@@ -93,11 +94,7 @@
     var mySwiper = new Swiper ('.swiper-container', {
         // If we need pagination
         pagination: {
-            el: '.swiper-pagination',
-                    clickable: true,
-                renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + (menu[index]) + '</span>';
-                },
+            el: ".swiper-pagination",
         },
 
         // Navigation arrows

@@ -88,7 +88,6 @@ section .theme .pagetag {
   width: auto;
   height: 24px;
   position: absolute;
-  z-index: 10;
   top: 90px;
   left: 85px;
 }
@@ -468,7 +467,7 @@ section .location .content .item .photo {
   position: relative;
 }
 
-section .location .content .item .photo span {
+section .location .content .item .photo .swiper-slide > span {
   color: #fff;
   position: absolute;
   right: 16px;
@@ -525,12 +524,37 @@ section .location-location .content .item .photo {
   float: left;
 }
 
-section .location-function {
-  background: #F2E8D1;
+section .location-location .content .item .photo .swiper-pagination {
+  height: 30px !important;
+  opacity: 1;
+  text-align: left;
+  padding: 0 32px;
 }
 
-section .location-function .content .pagetag {
-  z-index: 12;
+section .location-location .content .item .photo .swiper-pagination span {
+  width: 8px;
+  height: 8px;
+  outline: 2px solid #C9CACA;
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  opacity: 1;
+  vertical-align: middle;
+}
+
+section .location-location .content .item .photo .swiper-pagination span.swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  outline: 2px solid #fff;
+  background: #EA6518;
+}
+
+section .location-location .content .item .photo .swiper-pagination span + span {
+  margin-left: 12px;
+}
+
+section .location-function {
+  background: #F2E8D1;
 }
 
 section .location-function .content .item .introduction {
@@ -732,9 +756,13 @@ section .location-function .popup .inner .swiper-button-prev {
   height: 48px;
   left: 10%;
   top: auto;
-  bottom: calc(10% + 66px);
+  bottom: 10%;
   background-image: url(../img/arrow-popup_left.svg);
   background-size: contain;
+}
+
+section .location-function .popup .inner .swiper-button-prev:hover {
+  background-image: url(../img/arrow-popup_left-hover.svg);
 }
 
 section .location-function .popup .inner .swiper-button-next {
@@ -743,21 +771,30 @@ section .location-function .popup .inner .swiper-button-next {
   right: auto;
   left: 10%;
   top: auto;
-  bottom: 10%;
+  bottom: calc(10% + 66px);
   background-image: url(../img/arrow-popup_right.svg);
   background-size: contain;
 }
 
+section .location-function .popup .inner .swiper-button-next:hover {
+  background-image: url(../img/arrow-popup_right-hover.svg);
+}
+
 section .location-function .popup .popup_close {
+  width: 56px;
+  height: 56px;
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #000;
+  top: 40px;
+  left: 40px;
   z-index: 12;
+  background: url(../img/back.svg);
+  background-size: contain;
 }
 
 section .location-function .popup .popup_close:hover {
   cursor: pointer;
+  background: url(../img/back-hover.svg);
+  opacity: 1;
 }
 
 section .location-function .popup.active {
@@ -1159,6 +1196,19 @@ section .architecture-public .popup .inner .popup_photo .group {
 
 section .architecture-public .popup .inner .popup_photo .group .item {
   margin: 8px;
+  position: relative;
+}
+
+section .architecture-public .popup .inner .popup_photo .group .item span {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  color: #fff;
+}
+
+section .architecture-public .popup .inner .popup_photo .group .item span.top {
+  bottom: auto;
+  top: 16px;
 }
 
 section .architecture-public .popup .inner .popup_intro {
@@ -2014,6 +2064,10 @@ section .engineering-engineering .popup .inner .swiper-button-prev {
   background-size: contain;
 }
 
+section .engineering-engineering .popup .inner .swiper-button-prev:hover {
+  background-image: url(../img/arrow_left3-hover.svg);
+}
+
 section .engineering-engineering .popup .inner .swiper-button-next {
   width: 48px;
   height: 48px;
@@ -2025,16 +2079,25 @@ section .engineering-engineering .popup .inner .swiper-button-next {
   background-size: contain;
 }
 
+section .engineering-engineering .popup .inner .swiper-button-next:hover {
+  background-image: url(../img/arrow_right3-hover.svg);
+}
+
 section .engineering-engineering .popup .popup_close {
+  width: 56px;
+  height: 56px;
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #000;
+  bottom: 40px;
+  left: 40px;
   z-index: 12;
+  background: url(../img/back.svg);
+  background-size: contain;
 }
 
 section .engineering-engineering .popup .popup_close:hover {
   cursor: pointer;
+  background: url(../img/back-hover.svg);
+  opacity: 1;
 }
 
 section .engineering-engineering .popup.active {
@@ -2065,8 +2128,7 @@ section .construction .content {
 }
 
 section .construction .content .inner {
-  width: 50%;
-  margin: 20px;
+  width: 44%;
 }
 
 section .construction .content .inner .spirit {
@@ -2280,15 +2342,20 @@ section .construction .popup .inner .photo.active {
 }
 
 section .construction .popup .popup_close {
+  width: 56px;
+  height: 56px;
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #000;
+  bottom: 40px;
+  right: 40px;
   z-index: 12;
+  background: url(../img/back.svg);
+  background-size: contain;
 }
 
 section .construction .popup .popup_close:hover {
   cursor: pointer;
+  background: url(../img/back-hover.svg);
+  opacity: 1;
 }
 
 section .construction .popup.active {

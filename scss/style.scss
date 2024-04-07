@@ -28,7 +28,6 @@ section{
             width: auto;
             height: 24px;
             position: absolute;
-            z-index: 10;
             top: 90px;
             left: 85px;
         }
@@ -365,7 +364,7 @@ section{
                     float: right;
                     position: relative;
 
-                    span{
+                    .swiper-slide > span{
                         color: #fff;
                         position: absolute;
                         right: 16px;
@@ -421,6 +420,35 @@ section{
                 .photo{
                     max-width: calc(1220/1920*100%);
                     float: left;
+                    .swiper-pagination{
+                        height: 30px !important;
+                        opacity: 1;
+                        text-align: left;
+                        padding: 0 32px;
+                        
+                        
+                        span{
+                            width: 8px;
+                            height: 8px;
+                            outline: 2px solid #C9CACA;
+                            position: relative;
+                            display: inline-block;
+                            background: #fff;
+                            opacity: 1;
+                            vertical-align: middle;
+
+                            &.swiper-pagination-bullet-active{
+                                width: 12px;
+                                height: 12px;
+                                outline: 2px solid #fff;
+                                background: $primary-color;
+                            }
+                            
+                        }
+                        span + span{
+                            margin-left: 12px;
+                        }
+                    }
                 }
             }
         }
@@ -429,7 +457,7 @@ section{
         background: #F2E8D1;
         .content{
             .pagetag{
-                z-index: 12;
+                // z-index: 12;
             }
             .item{
                 .introduction{
@@ -602,9 +630,12 @@ section{
                     height: 48px;
                     left: 10%;
                     top: auto;
-                    bottom: calc(10% + 66px);
+                    bottom: 10%;
                     background-image: url(../img/arrow-popup_left.svg);
                     background-size: contain;
+                    &:hover{
+                        background-image: url(../img/arrow-popup_left-hover.svg);
+                    }
                 }
                 .swiper-button-next{
                     width: 48px;
@@ -612,19 +643,28 @@ section{
                     right: auto;
                     left: 10%;
                     top: auto;
-                    bottom: 10%;
+                    bottom: calc(10% + 66px);
                     background-image: url(../img/arrow-popup_right.svg);
                     background-size: contain;
+                    &:hover{
+                        background-image: url(../img/arrow-popup_right-hover.svg);
+                    }
                 }
             }
             .popup_close{
+                width: 56px;
+                height: 56px;
                 position: absolute;
-                top: 10px;
-                right: 10px;
-                color: #000;
+                top: 40px;
+                left: 40px;
+                // color: #000;
                 z-index: 12;
+                background: url(../img/back.svg);
+                background-size: contain;
                 &:hover{
                     cursor: pointer;
+                    background: url(../img/back-hover.svg);
+                    opacity: 1;
                 }
             }
             &.active{
@@ -909,6 +949,18 @@ section{
                         justify-content: space-between;
                         .item{
                             margin: 8px;
+                            position: relative;
+                            span{
+                                position: absolute;
+                                left: 20px;
+                                bottom: 16px;
+                                color: #fff;
+                                &.top{
+                                    bottom: auto;
+                                    top: 16px;
+                                }
+
+                            }
                         }
                     }
                 }
@@ -1609,6 +1661,9 @@ section{
                     bottom: 25%;
                     background-image: url(../img/arrow_left3.svg);
                     background-size: contain;
+                    &:hover{
+                        background-image: url(../img/arrow_left3-hover.svg);
+                    }
                 }
                 .swiper-button-next{
                     width: 48px;
@@ -1619,16 +1674,25 @@ section{
                     bottom: 25%;
                     background-image: url(../img/arrow_right3.svg);
                     background-size: contain;
+                    &:hover{
+                        background-image: url(../img/arrow_right3-hover.svg);
+                    }
                 }
             }
             .popup_close{
+                width: 56px;
+                height: 56px;
                 position: absolute;
-                top: 10px;
-                right: 10px;
-                color: #000;
+                bottom: 40px;
+                left: 40px;
+                // color: #000;
                 z-index: 12;
+                background: url(../img/back.svg);
+                background-size: contain;
                 &:hover{
                     cursor: pointer;
+                    background: url(../img/back-hover.svg);
+                    opacity: 1;
                 }
             }
             &.active{
@@ -1648,8 +1712,8 @@ section{
             align-items: flex-end;
             padding: 160px 85px 100px;
             .inner{
-                width: 50%;
-                margin: 20px;
+                width: 44%;
+                // margin: 40px;
                 .spirit{
                     display: flex;
                     flex-direction: row;
@@ -1817,13 +1881,19 @@ section{
                 }
             }
             .popup_close{
+                width: 56px;
+                height: 56px;
                 position: absolute;
-                top: 10px;
-                right: 10px;
-                color: #000;
+                bottom: 40px;
+                right: 40px;
+                // color: #000;
                 z-index: 12;
+                background: url(../img/back.svg);
+                background-size: contain;
                 &:hover{
                     cursor: pointer;
+                    background: url(../img/back-hover.svg);
+                    opacity: 1;
                 }
             }
             &.active{
