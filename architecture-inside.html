@@ -24,7 +24,60 @@
 <body>
 
     <section>
-        <header></header>
+                <header id="header">
+                    <nav>
+                        <ul class="nav">
+                            <li>
+                                <h3></h3>
+                                <ol>
+                                    <li>
+                                        <a href="location-environment.html">環境篇</a>
+                                    </li>
+                                    <li>
+                                        <a href="location-location.html">地段建設篇</a>
+                                    </li>
+                                    <li>
+                                        <a href="location-function.html">生活機能篇</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <h3></h3>
+                                <ol>
+                                    <li>
+                                        <a href="architecture-outward.html">日夜間外觀</a>
+                                    </li>
+                                    <li>
+                                        <a href="architecture-public.html" class="spacing0">大廳梯廳公共空間</a>
+                                    </li>
+                                    <li>
+                                        <a href="architecture-inside.html">空間規劃</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <h3></h3>
+                                <ol>
+                                    <li>
+                                        <a href="engineering-materials.html">建材重點</a>
+                                    </li>
+                                    <li>
+                                        <a href="engineering-engineering.html">工程細節</a>
+                                    </li>
+                                    <li>
+                                </ol>
+                            </li>
+                            <li>
+                                <h3><a href="construction.html"></a></h3>
+                            </li>
+                        </ul>
+                        <div class="menu-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </nav>
+                </header>
         <div class="theme architecture architecture-inside">
             <div class="content">
                 <div class="plan js_height">
@@ -164,9 +217,6 @@
 
     $(document).ready(function () {
 
-        $('#header').load('page/header.html');
-        $('#footer').load('page/footer.html');
-
         var max = 0;
         $('.js_height').each(function (T) {
             T = $(this).outerHeight(), T > max && (max = T);
@@ -281,6 +331,13 @@
             prevEl: '.swiper-button-prev',
         },
     })
+
+
+$('.menu-toggle').on('click', function () {      
+    $(this).toggleClass('active');
+    $("#header .nav").toggleClass('active');
+
+});
 
 
 </script>
