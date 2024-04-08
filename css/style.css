@@ -1541,31 +1541,31 @@ section .architecture-inside .content .plan .floor li {
 }
 
 section .architecture-inside .content .plan .floor li:nth-child(1) {
-  background-image: url(../img/floor_7.svg);
+  background-image: url(./img/floor_7.svg);
 }
 
 section .architecture-inside .content .plan .floor li:nth-child(2) {
-  background-image: url(../img/floor_4.svg);
+  background-image: url(./img/floor_4.svg);
 }
 
 section .architecture-inside .content .plan .floor li:nth-child(3) {
-  background-image: url(../img/floor_3.svg);
+  background-image: url(./img/floor_3.svg);
 }
 
 section .architecture-inside .content .plan .floor li:nth-child(4) {
-  background-image: url(../img/floor_2.svg);
+  background-image: url(./img/floor_2.svg);
 }
 
 section .architecture-inside .content .plan .floor li:nth-child(5) {
-  background-image: url(../img/floor_1.svg);
+  background-image: url(./img/floor_1.svg);
 }
 
 section .architecture-inside .content .plan .floor li:nth-child(6) {
-  background-image: url(../img/floor_B1.svg);
+  background-image: url(./img/floor_B1.svg);
 }
 
 section .architecture-inside .content .plan .floor li:nth-child(7) {
-  background-image: url(../img/floor_B2.svg);
+  background-image: url(./img/floor_B2.svg);
 }
 
 section .architecture-inside .content .plan .floor li:hover, section .architecture-inside .content .plan .floor li.active {
@@ -1573,31 +1573,31 @@ section .architecture-inside .content .plan .floor li:hover, section .architectu
 }
 
 section .architecture-inside .content .plan .floor li:hover:nth-child(1), section .architecture-inside .content .plan .floor li.active:nth-child(1) {
-  background-image: url(../img/floor-active_7.svg);
+  background-image: url(./img/floor-active_7.svg);
 }
 
 section .architecture-inside .content .plan .floor li:hover:nth-child(2), section .architecture-inside .content .plan .floor li.active:nth-child(2) {
-  background-image: url(../img/floor-active_4.svg);
+  background-image: url(./img/floor-active_4.svg);
 }
 
 section .architecture-inside .content .plan .floor li:hover:nth-child(3), section .architecture-inside .content .plan .floor li.active:nth-child(3) {
-  background-image: url(../img/floor-active_3.svg);
+  background-image: url(./img/floor-active_3.svg);
 }
 
 section .architecture-inside .content .plan .floor li:hover:nth-child(4), section .architecture-inside .content .plan .floor li.active:nth-child(4) {
-  background-image: url(../img/floor-active_2.svg);
+  background-image: url(./img/floor-active_2.svg);
 }
 
 section .architecture-inside .content .plan .floor li:hover:nth-child(5), section .architecture-inside .content .plan .floor li.active:nth-child(5) {
-  background-image: url(../img/floor-active_1.svg);
+  background-image: url(./img/floor-active_1.svg);
 }
 
 section .architecture-inside .content .plan .floor li:hover:nth-child(6), section .architecture-inside .content .plan .floor li.active:nth-child(6) {
-  background-image: url(../img/floor-active_B1.svg);
+  background-image: url(./img/floor-active_B1.svg);
 }
 
 section .architecture-inside .content .plan .floor li:hover:nth-child(7), section .architecture-inside .content .plan .floor li.active:nth-child(7) {
-  background-image: url(../img/floor-active_B2.svg);
+  background-image: url(./img/floor-active_B2.svg);
 }
 
 section .architecture-inside .content .plan .floor li + li {
