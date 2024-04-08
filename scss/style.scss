@@ -1083,13 +1083,13 @@ section{
                     display: none;
                     transition: all .3s;
 
-                    &:nth-child(1){ background-image: url("../img/inside_photo1.svg");}
-                    &:nth-child(2){ background-image: url("../img/inside_photo2.svg");}
-                    &:nth-child(3){ background-image: url("../img/inside_photo3.svg");}
-                    &:nth-child(4){ background-image: url("../img/inside_photo4.svg");}
-                    &:nth-child(5){ background-image: url("../img/inside_photo5.svg");}
-                    &:nth-child(6){ background-image: url("../img/inside_photo6.svg");}
-                    &:nth-child(7){ background-image: url("../img/inside_photo7.svg");}
+                    &:nth-child(1){ background-image: url("./img/inside_photo1.svg");}
+                    &:nth-child(2){ background-image: url("./img/inside_photo2.svg");}
+                    &:nth-child(3){ background-image: url("./img/inside_photo3.svg");}
+                    &:nth-child(4){ background-image: url("./img/inside_photo4.svg");}
+                    &:nth-child(5){ background-image: url("./img/inside_photo5.svg");}
+                    &:nth-child(6){ background-image: url("./img/inside_photo6.svg");}
+                    &:nth-child(7){ background-image: url("./img/inside_photo7.svg");}
 
                     &.active{ display: block;}
 
