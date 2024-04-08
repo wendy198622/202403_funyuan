@@ -1033,23 +1033,23 @@ section{
                         background-position: 0 0;
                         background-repeat: no-repeat;
                         background-size: cover;
-                        &:nth-child(1){ background-image: url(./img/floor_7.svg);}
-                        &:nth-child(2){ background-image: url(./img/floor_4.svg);}
-                        &:nth-child(3){ background-image: url(./img/floor_3.svg);}
-                        &:nth-child(4){ background-image: url(./img/floor_2.svg);}
-                        &:nth-child(5){ background-image: url(./img/floor_1.svg);}
-                        &:nth-child(6){ background-image: url(./img/floor_B1.svg);}
-                        &:nth-child(7){ background-image: url(./img/floor_B2.svg);}
+                        &:nth-child(1){ background-image: url("../img/floor_7.svg");}
+                        &:nth-child(2){ background-image: url("../img/floor_4.svg");}
+                        &:nth-child(3){ background-image: url("../img/floor_3.svg");}
+                        &:nth-child(4){ background-image: url("../img/floor_2.svg");}
+                        &:nth-child(5){ background-image: url("../img/floor_1.svg");}
+                        &:nth-child(6){ background-image: url("../img/floor_B1.svg");}
+                        &:nth-child(7){ background-image: url("../img/floor_B2.svg");}
 
                         &:hover, &.active{
                             cursor: pointer;
-                            &:nth-child(1){ background-image: url(./img/floor-active_7.svg);}
-                            &:nth-child(2){ background-image: url(./img/floor-active_4.svg);}
-                            &:nth-child(3){ background-image: url(./img/floor-active_3.svg);}
-                            &:nth-child(4){ background-image: url(./img/floor-active_2.svg);}
-                            &:nth-child(5){ background-image: url(./img/floor-active_1.svg);}
-                            &:nth-child(6){ background-image: url(./img/floor-active_B1.svg);}
-                            &:nth-child(7){ background-image: url(./img/floor-active_B2.svg);}
+                            &:nth-child(1){ background-image: url("../img/floor-active_7.svg");}
+                            &:nth-child(2){ background-image: url("../img/floor-active_4.svg");}
+                            &:nth-child(3){ background-image: url("../img/floor-active_3.svg");}
+                            &:nth-child(4){ background-image: url("../img/floor-active_2.svg");}
+                            &:nth-child(5){ background-image: url("../img/floor-active_1.svg");}
+                            &:nth-child(6){ background-image: url("../img/floor-active_B1.svg");}
+                            &:nth-child(7){ background-image: url("../img/floor-active_B2.svg");}
                         }
                     }
                     li + li{
@@ -1083,13 +1083,13 @@ section{
                     display: none;
                     transition: all .3s;
 
-                    &:nth-child(1){ background-image: url("./img/inside_photo1.svg");}
-                    &:nth-child(2){ background-image: url("./img/inside_photo2.svg");}
-                    &:nth-child(3){ background-image: url("./img/inside_photo3.svg");}
-                    &:nth-child(4){ background-image: url("./img/inside_photo4.svg");}
-                    &:nth-child(5){ background-image: url("./img/inside_photo5.svg");}
-                    &:nth-child(6){ background-image: url("./img/inside_photo6.svg");}
-                    &:nth-child(7){ background-image: url("./img/inside_photo7.svg");}
+                    &:nth-child(1){ background-image: url("../img/inside_photo1.svg");}
+                    &:nth-child(2){ background-image: url("../img/inside_photo2.svg");}
+                    &:nth-child(3){ background-image: url("../img/inside_photo3.svg");}
+                    &:nth-child(4){ background-image: url("../img/inside_photo4.svg");}
+                    &:nth-child(5){ background-image: url("../img/inside_photo5.svg");}
+                    &:nth-child(6){ background-image: url("../img/inside_photo6.svg");}
+                    &:nth-child(7){ background-image: url("../img/inside_photo7.svg");}
 
                     &.active{ display: block;}
 
