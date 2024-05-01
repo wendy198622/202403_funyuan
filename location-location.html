@@ -24,7 +24,8 @@
 <body>
 
     <section>
-        <header id="header"><nav>
+        <header id="header">
+            <nav>
                 <ul class="nav">
                     <li>
                         <h3></h3>
@@ -33,10 +34,10 @@
                                 <a href="location-environment.html">環境篇</a>
                             </li>
                             <li>
-                                <a href="location-location.html">地段建設篇</a>
+                                <a href="location-location.html">地段建設</a>
                             </li>
                             <li>
-                                <a href="location-function.html">生活機能篇</a>
+                                <a href="location-function.html">生活機能</a>
                             </li>
                         </ol>
                     </li>
@@ -44,10 +45,10 @@
                         <h3></h3>
                         <ol>
                             <li>
-                                <a href="architecture-outward.html">日夜間外觀</a>
+                                <a href="architecture-outward.html">建築外觀</a>
                             </li>
                             <li>
-                                <a href="architecture-public.html" class="spacing0">大廳梯廳公共空間</a>
+                                <a href="architecture-public.html">公共空間</a>
                             </li>
                             <li>
                                 <a href="architecture-inside.html">空間規劃</a>
@@ -83,23 +84,7 @@
                     <img src="img/location_pagetag.svg" alt="">
                 </div>
                 <div class="item">
-                    <div class="introduction">
-                        <div class="introtext">
-                            <p>地段建設</p>
-                            <h3>磺港溪以南再造計畫</h3>
-                            <hr>
-                            <p>再造計畫讓北投磺港溪水岸連結出綠色走廊，<br>
-                                    奇岩一號二號公園便是應運北投森態走廊而生，<br>
-                                    新生水岸擴充綻放，未來後勢增值看揚!</p>
-                            <h4>旁鄰三大建設，增值強強滾</h4>
-                            <ul class="inline">
-                                <li>關渡科技園區</li>
-                                <li>北士科計劃</li>
-                                <li>士林再生計畫</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="photo swiper-container">
+                    <div class="photo photo1 swiper-container" style="display: block;">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <span>磺港溪再造C段護岸及步道整建工程</span>
@@ -125,6 +110,48 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="photo photo2" style="display: none;">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <span>北投士林科技園區科專區用地資訊平台</span>
+                                <img src="img/location_photo2-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="introduction">
+                        <ol class="tabbox">
+                            <li class="tab1 active">磺港溪</li>
+                            <li class="tab2">三大建設</li>
+                        </ol>
+                        <div class="introtext introtext1" style="display: block;">
+                            <!-- <p>地段建設</p> -->
+                            <h3>磺港溪以南再造計畫</h3>
+                            <hr>
+                            <p>再造計畫讓北投磺港溪水岸連結出綠色走廊，<br>
+                                    奇岩一號二號公園便是應運北投森態走廊而生，<br>
+                                    新生水岸擴充綻放，未來後勢增值看揚!</p>
+                            <h4>旁鄰三大建設，增值強強滾</h4>
+                            <ul class="inline">
+                                <li>關渡科技園區</li>
+                                <li>北士科計劃</li>
+                                <li>士林再生計畫</li>
+                            </ul>
+                        </div>
+                        <div class="introtext introtext2" style="display: none;">
+                            <!-- <p>地段建設</p> -->
+                            <h3>磺港溪以南再造計畫</h3>
+                            <hr>
+                            <h6>北士科計劃</h6>
+                            <p>被譽為北市最後一座科技園區開發案格外受矚目，總面積94.38公頃，其中科技用地佔25公頃，以數位技術服務、智慧醫療為產業主軸，區域AI經濟發展定錨大未來!</p>
+                            <h6>關渡科技園區</h6>
+                            <p>佔地3.78公頃，華碩、和碩企業總部及賓士、慈濟均已進駐，就業人口增加。</p>
+                            <h6>士林再生計畫</h6>
+                            <p>囊括北藝中心、北市科學藝術園區、捷運環狀北環段之綜合發展，並以北藝中心為主軸來串連區域經濟與文化流動，整合都市綠帶美景，居住品質更上層樓!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,11 +181,28 @@
     });
 
 
-$('.menu-toggle').on('click', function () {      
-    $(this).toggleClass('active');
-    $("#header .nav").toggleClass('active');
+    $('.menu-toggle').on('click', function () {      
+        $(this).toggleClass('active');
+        $("#header .nav").toggleClass('active');
 
-});
+    });
+
+    $('.tabbox .tab1').on('click', function () {      
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.introtext1').css('display','block');
+        $('.introtext2').css('display','none');
+        $('.photo1').css('display','block');
+        $('.photo2').css('display','none');
+        
+    });
+
+    $('.tabbox .tab2').on('click', function () {      
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.introtext2').css('display','block');
+        $('.introtext1').css('display','none');
+        $('.photo2').css('display','block');
+        $('.photo1').css('display','none');
+    });
 
 
 </script>

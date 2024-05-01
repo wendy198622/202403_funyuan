@@ -329,8 +329,8 @@ section .theme .pagetag {
   width: auto;
   height: 24px;
   position: absolute;
-  top: 90px;
-  left: 85px;
+  top: 50px;
+  left: 100px;
 }
 
 section .theme .content {
@@ -368,7 +368,7 @@ section .home {
 section .home .content {
   width: calc(920/1920*100%);
   height: 0;
-  padding-bottom: 26%;
+  padding-bottom: 42%;
   position: absolute;
   top: 0;
   right: 0;
@@ -389,7 +389,7 @@ section .home .content .CompanyName img {
 
 section .home .content .Topic {
   width: calc(920/920*100%);
-  margin: 18px auto 42px;
+  margin: 18px auto 0;
 }
 
 section .home .content .Topic img {
@@ -397,19 +397,29 @@ section .home .content .Topic img {
           filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.6));
 }
 
+section .home .content .Subtitle {
+  width: calc(648/920*100%);
+  margin: 70px auto 20px;
+}
+
+section .home .content .Subtitle img {
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
+}
+
 section .home .content .Slogan {
-  width: calc(490/920*100%);
+  width: calc(420/920*100%);
   margin: 0 auto;
 }
 
 section .home .content .Slogan img {
-  -webkit-filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.6));
-          filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.6));
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
 }
 
 section .home .content nav {
   width: calc(760/920*100%);
-  margin: 96px auto 0;
+  margin: 88px auto 0;
 }
 
 section .home .content nav ul {
@@ -556,31 +566,43 @@ section .location {
   position: relative;
 }
 
-section .location .content:before {
-  content: "";
-  width: 0;
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
+section .location .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 section .location .content .item {
   width: 100%;
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-  margin-right: -4px;
-  margin-left: -4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 section .location .content .item .introduction {
   width: calc(820/1920*100%);
-  padding: 100px 85px;
+  padding: 100px 100px;
   float: left;
-}
-
-section .location .content .item .introduction .introtext {
-  margin-top: 120px;
 }
 
 section .location .content .item .introduction .introtext p {
@@ -676,7 +698,7 @@ section .location .content .item .introduction .introtext ul li::before {
 
 section .location .content .item .introduction .introtext ul.inline li {
   display: inline-block;
-  padding: 4px 18px;
+  padding: 4px 14px 4px 18px;
   font-size: 18px;
   line-height: 160%;
   letter-spacing: 4px;
@@ -732,8 +754,8 @@ section .location-environment {
 }
 
 section .location-environment .content .item .introduction {
-  width: calc(820/1920*100%);
-  padding: 100px 85px;
+  width: calc(800/1920*100%);
+  padding: 100px 100px;
   float: left;
 }
 
@@ -742,7 +764,7 @@ section .location-environment .content .item .introduction .introtext {
 }
 
 section .location-environment .content .item .photo {
-  max-width: calc(1080/1920*100%);
+  max-width: calc(1120/1920*100%);
   float: right;
 }
 
@@ -754,15 +776,72 @@ section .location-location .content {
   padding-top: 80px;
 }
 
+section .location-location .content .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 section .location-location .content .item .introduction {
-  width: calc(700/1920*100%);
-  padding: 0 85px;
-  float: right;
+  float: unset;
+}
+
+section .location-location .content .item .introduction .tabbox li {
+  display: inline-block;
+  color: #EA6518;
+  font-size: 20px;
+  line-height: 1.8;
+  padding: 0 20px;
+  border: 1px solid #EA6518;
+  letter-spacing: 4px;
+}
+
+section .location-location .content .item .introduction .tabbox li.active {
+  background: #EA6518;
+  color: #fff;
+}
+
+section .location-location .content .item .introduction .tabbox li:hover {
+  cursor: pointer;
+}
+
+section .location-location .content .item .introduction .tabbox li + li {
+  margin-left: 10px;
+}
+
+section .location-location .content .item .introduction .introtext {
+  margin-top: 10px;
+}
+
+section .location-location .content .item .introduction .introtext h6 {
+  display: inline-block;
+  padding: 4px 8px 4px 12px;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 4px;
+  font-weight: 400;
+  border: 1px solid #604C3F;
+  background: #40220f;
+  color: #fff;
+}
+
+section .location-location .content .item .introduction .introtext p {
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 section .location-location .content .item .photo {
-  max-width: calc(1220/1920*100%);
-  float: left;
+  float: unset;
 }
 
 section .location-location .content .item .photo .swiper-pagination {
@@ -798,10 +877,13 @@ section .location-function {
   background: #F2E8D1;
 }
 
+section .location-function .content .item {
+  height: 100%;
+}
+
 section .location-function .content .item .introduction {
-  width: calc(725/1920*100%);
-  padding: 100px 85px;
-  float: left;
+  width: calc(100% - 1280px);
+  padding: 100px 100px;
 }
 
 section .location-function .content .item .introduction .map_nav {
@@ -809,7 +891,7 @@ section .location-function .content .item .introduction .map_nav {
 }
 
 section .location-function .content .item .introduction .map_nav .map_nav_list {
-  width: 108px;
+  width: 82px;
   font-size: 21px;
   line-height: 140%;
   letter-spacing: 6px;
@@ -842,9 +924,18 @@ section .location-function .content .item .introduction .map_nav .map_nav_list:h
 }
 
 section .location-function .content .item .map_photo {
-  width: calc(1195/1920*100%);
-  float: right;
+  width: 1280px;
+  height: 100%;
   position: relative;
+  padding-left: 10px;
+  background: #FFD297;
+}
+
+section .location-function .content .item .map_photo .map_photo_bg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/function_map.png) center center no-repeat;
+  background-size: cover;
 }
 
 section .location-function .content .item .map_photo .map_photo_location {
@@ -872,12 +963,13 @@ section .location-function .content .item .map_photo .map_photo_location .map_ph
 
 section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list span {
   font-size: 16px;
-  letter-spacing: 2px;
   display: block;
   text-align: center;
-  font-weight: 700;
+  background: #898989;
+  color: #fff;
+  font-weight: 400;
+  padding: 0 5px;
   margin-bottom: 8px;
-  color: #000ad0;
   opacity: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -886,38 +978,53 @@ section .location-function .content .item .map_photo .map_photo_location .map_ph
 section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list img {
   width: 40px;
   margin: 0 auto;
-  -webkit-filter: drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.6));
-          filter: drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.6));
+  -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.6));
 }
 
 section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-1 {
-  top: 30%;
-  right: 16.5%;
+  top: 33%;
+  right: 27.5%;
 }
 
 section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-2 {
-  top: 57%;
-  right: 4%;
+  top: 51%;
+  right: 31%;
+}
+
+section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-3 {
+  top: 59%;
+  right: 20.2%;
+}
+
+section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-4 {
+  top: 37.4%;
+  left: 32.2%;
+}
+
+section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-5 {
+  top: 69.4%;
+  left: 33.2%;
+}
+
+section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-6 {
+  top: 79.4%;
+  left: 46.2%;
+}
+
+section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-7 {
+  top: 70%;
+  left: 56.2%;
 }
 
 section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location2-1 {
-  top: 69%;
-  left: 17.2%;
+  top: 79.8%;
+  right: 28.5%;
 }
 
 section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-1 {
-  top: 33%;
-  left: 41.5%;
-}
-
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-2 {
-  top: 67.4%;
-  left: 47.2%;
-}
-
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location4-1 {
-  top: 79.8%;
-  right: 12.5%;
+  top: 74%;
+  left: 10%;
 }
 
 section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list:hover {
@@ -959,7 +1066,7 @@ section .location-function .popup .inner {
 section .location-function .popup .inner .popup_intro {
   width: calc(415/1920*100%);
   height: 100%;
-  padding: 200px 85px;
+  padding: 200px 100px;
   float: left;
 }
 
@@ -1225,7 +1332,7 @@ section .architecture-outward .content .intro .box .text {
 }
 
 section .architecture-outward .content .intro .box .text h3 {
-  font-size: 36px;
+  font-size: 40px;
   line-height: 140%;
   letter-spacing: 2px;
   font-family: "Noto Serif TC", serif;
@@ -1235,7 +1342,8 @@ section .architecture-outward .content .intro .box .text h3 {
 }
 
 section .architecture-outward .content .intro .box .text p {
-  font-size: 22px;
+  width: 100%;
+  font-size: 25px;
   line-height: 150%;
   letter-spacing: 3px;
   color: #956134;
@@ -1352,17 +1460,17 @@ section .architecture-public .content .floor .toptitle .txtbox .intro .listbox .
 }
 
 section .architecture-public .content .floor .photo {
-  width: calc(1082/1920*100%);
+  width: 100%;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 section .architecture-public .content .floor .swiper-button-prev {
   width: 48px;
   height: 48px;
   left: auto;
-  right: 160px;
-  top: 120px;
+  right: 140px;
+  top: 170px;
   background-image: url(../img/arrow_left2.svg);
   background-size: contain;
 }
@@ -1370,8 +1478,8 @@ section .architecture-public .content .floor .swiper-button-prev {
 section .architecture-public .content .floor .swiper-button-next {
   width: 48px;
   height: 48px;
-  right: 100px;
-  top: 120px;
+  right: 80px;
+  top: 170px;
   bottom: 10%;
   background-image: url(../img/arrow_right2.svg);
   background-size: contain;
@@ -1412,7 +1520,6 @@ section .architecture-public .popup .inner {
   margin-right: -4px;
   margin-left: -4px;
   position: relative;
-  padding-top: 60px;
 }
 
 section .architecture-public .popup .inner .popup_photo {
@@ -1455,7 +1562,7 @@ section .architecture-public .popup .inner .popup_photo .group .item span.top {
 section .architecture-public .popup .inner .popup_intro {
   width: calc(330/1920*100%);
   height: 100%;
-  padding: 100px 85px;
+  padding: 100px 100px;
   margin-right: calc(58/1920*100%);
   float: right;
 }
@@ -1731,7 +1838,6 @@ section .architecture-inside .content .photo .item:nth-child(2) .link_a6, sectio
 section .architecture-inside .popup {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   left: 0;
@@ -1750,8 +1856,17 @@ section .architecture-inside .popup:before {
   vertical-align: middle;
 }
 
+section .architecture-inside .popup .mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 section .architecture-inside .popup .inner {
-  width: calc(1600/1920*100%);
+  width: 1600px;
   height: 860px;
   overflow: hidden;
   display: -webkit-box;
@@ -1858,13 +1973,17 @@ section .architecture-inside .popup .inner .toptitle .txtbox .intro .listbox .li
   cursor: pointer;
 }
 
-section .architecture-inside .popup .inner .toptitle .txtbox ul {
+section .architecture-inside .popup .inner .toptitle .txtbox h4 {
   margin-top: 200px;
+  font-size: 28px;
+  line-height: 180%;
+  color: #fff;
+  font-weight: 700;
 }
 
 section .architecture-inside .popup .inner .toptitle .txtbox ul li {
   color: #fff;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 180%;
   letter-spacing: 2px;
   font-weight: 300;
@@ -1906,7 +2025,151 @@ section .architecture-inside .popup .inner .toptitle .txtbox ul.inline li:first-
 
 section .architecture-inside .popup .inner .photo {
   width: calc(1072/1600*100%);
+  height: 100%;
   margin: 0 auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #fff9df;
+  background-size: contain;
+}
+
+section .architecture-inside .popup .inner .photo .bg {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+section .architecture-inside .popup .inner .photo.photo_a1 {
+  background-image: url(../img/inside-popup_photoa1.png);
+}
+
+section .architecture-inside .popup .inner .photo.photo_a1 .bg {
+  background-image: url(../img/inside-popup_photoa1.png);
+}
+
+section .architecture-inside .popup .inner .photo.photo_a2 {
+  background-image: url(../img/inside-popup_photoa2.png);
+}
+
+section .architecture-inside .popup .inner .photo.photo_a3 {
+  background-image: url(../img/inside-popup_photoa3.png);
+}
+
+section .architecture-inside .popup .inner .photo .link {
+  position: absolute;
+  z-index: 1;
+}
+
+section .architecture-inside .popup .inner .photo .link:hover {
+  cursor: pointer;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a1_bathroom {
+  width: 11%;
+  height: 0;
+  padding-bottom: 7.5%;
+  left: 61.5%;
+  top: 14.8%;
+  z-index: 2;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a1_bedroomL {
+  width: 12%;
+  height: 0;
+  padding-bottom: 13.5%;
+  left: 45.6%;
+  top: 44.8%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a1_bedroomR {
+  width: 15.5%;
+  height: 0;
+  padding-bottom: 11%;
+  left: 72.5%;
+  top: 42%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a1_diningroom {
+  width: 14.2%;
+  height: 0;
+  padding-bottom: 10.8%;
+  left: 58%;
+  top: 42.5%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a1_kitchen {
+  width: 16%;
+  height: 0;
+  padding-bottom: 7.5%;
+  left: 45.6%;
+  top: 30%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a1_livingroom {
+  width: 24%;
+  height: 0;
+  padding-bottom: 13%;
+  left: 64%;
+  top: 63%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a1_masterbedroom {
+  width: 26%;
+  height: 0;
+  padding-bottom: 14.2%;
+  left: 62%;
+  top: 14.8%;
+  z-index: 1;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a2_bathroom {
+  width: 16%;
+  height: 0;
+  padding-bottom: 8.5%;
+  left: 69.5%;
+  top: 41.8%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a2_bedroomL {
+  width: 14%;
+  height: 0;
+  padding-bottom: 19.5%;
+  left: 51%;
+  top: 48.8%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a2_bedroomR {
+  width: 20%;
+  height: 0;
+  padding-bottom: 14.5%;
+  left: 65%;
+  top: 58%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a2_diningroom {
+  width: 17.2%;
+  height: 0;
+  padding-bottom: 11.8%;
+  left: 51.5%;
+  top: 26.5%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a2_kitchen {
+  width: 9%;
+  height: 0;
+  padding-bottom: 15%;
+  left: 42%;
+  top: 27%;
+}
+
+section .architecture-inside .popup .inner .photo .link_photo_a2_livingroom {
+  width: 16%;
+  height: 0;
+  padding-bottom: 15.5%;
+  left: 69%;
+  top: 13%;
 }
 
 section .architecture-inside .popup.active {
@@ -1941,7 +2204,7 @@ section .engineering-materials .content .item {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 160px 85px 55px;
+  padding: 160px 100px 55px;
   overflow: hidden;
 }
 
@@ -1987,7 +2250,7 @@ section .engineering-materials .content .item .pagination li:hover {
 }
 
 section .engineering-materials .content .item .photo {
-  width: calc(1400/1920*100%);
+  width: calc(1520/1920*100%);
   max-height: 100vh;
   position: static;
 }
@@ -2095,12 +2358,19 @@ section .engineering-engineering .content .item .photogroup {
   background-size: cover;
   width: calc(1242/1920*100%);
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 section .engineering-engineering .content .item .photogroup .photo {
-  width: calc(897/1242*100%);
-  margin: 10% auto 0;
+  width: 66%;
+  margin: 0 auto;
   position: relative;
+  padding-top: 100px;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link {
@@ -2112,99 +2382,95 @@ section .engineering-engineering .content .item .photogroup .photo .link {
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .linka {
-  width: 48px;
-  height: 48px;
+  width: 4%;
+  height: 0;
+  padding-bottom: 4%;
   position: absolute;
+  background: url(../img/engineering_link.svg) center center no-repeat;
+  background-size: cover;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .linka:hover {
   cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+section .engineering-engineering .content .item .photogroup .photo .link .linka.active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a1 {
-  top: 14%;
-  left: 26.5%;
+  top: 29.4%;
+  left: 36.4%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a2 {
-  top: 23%;
-  left: 37%;
+  top: 51.8%;
+  left: 59.2%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a3 {
-  top: 27.5%;
-  left: 50%;
+  top: 61.5%;
+  left: 18%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a4 {
-  top: 31.5%;
-  left: 20.5%;
+  top: 45.5%;
+  left: 50.5%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a5 {
-  top: 39%;
-  left: 49%;
+  top: 38%;
+  left: 17%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a6 {
-  top: 47%;
-  left: 20.5%;
+  top: 54%;
+  left: 16.8%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a7 {
-  top: 55%;
-  left: 21.5%;
+  top: 94.2%;
+  left: 71.5%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a8 {
-  top: 51.5%;
-  left: 57.5%;
+  top: 65%;
+  left: 45.2%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a9 {
-  top: 68.5%;
-  left: 75.5%;
+  top: 58%;
+  left: 60.5%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a10 {
-  top: 73%;
-  left: 61%;
+  top: 73.8%;
+  left: 37.5%;
 }
 
 section .engineering-engineering .content .item .photogroup .photo .link .a11 {
-  top: 79%;
-  left: 20.5%;
-}
-
-section .engineering-engineering .content .item .photogroup .photo .link .a12 {
-  top: 83.5%;
-  left: 26%;
-}
-
-section .engineering-engineering .content .item .photogroup .photo .link .a13 {
-  top: 83.5%;
-  left: 50%;
-}
-
-section .engineering-engineering .content .item .photogroup .photo .link .a14 {
-  top: 82.5%;
-  left: 64.5%;
-}
-
-section .engineering-engineering .content .item .photogroup .photo .link .a15 {
-  top: 90%;
-  left: 50%;
+  top: 86%;
+  left: 83%;
 }
 
 section .engineering-engineering .content .item .introduction {
-  background: url(../img/engineering_bg2.png) right top no-repeat;
+  background: #facd87;
   background-size: cover;
   width: calc(678/1920*100%);
-  padding: 100px 85px;
-}
-
-section .engineering-engineering .content .item .introduction .introtext {
-  margin-top: 120px;
+  padding: 100px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 section .engineering-engineering .content .item .introduction .introtext p {
@@ -2242,6 +2508,10 @@ section .engineering-engineering .content .item .introduction .introtext ul li {
   display: inline-block;
 }
 
+section .engineering-engineering .content .item .introduction .introtext ul li.name_a11, section .engineering-engineering .content .item .introduction .introtext ul li.name_a12 {
+  width: 64%;
+}
+
 section .engineering-engineering .content .item .introduction .introtext ul li.active {
   padding-left: 24px;
   font-weight: 600;
@@ -2264,10 +2534,10 @@ section .engineering-engineering .content .item .introduction .introtext ul li:h
 }
 
 section .engineering-engineering .content .item .introstep {
-  width: calc(942/1920*100%);
+  width: calc(1060/1920*100%);
   position: absolute;
   right: 0;
-  bottom: 72px;
+  top: 15%;
 }
 
 section .engineering-engineering .popup {
@@ -2287,9 +2557,21 @@ section .engineering-engineering .popup {
 
 section .engineering-engineering .popup .inner {
   width: 100%;
-  height: auto;
+  height: 100%;
   overflow: hidden;
-  padding: 100px 85px;
+}
+
+section .engineering-engineering .popup .inner .swiper-wrapper {
+  overflow: hidden;
+}
+
+section .engineering-engineering .popup .inner .swiper-wrapper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
+}
+
+section .engineering-engineering .popup .inner .swiper-wrapper .slidebox {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2306,8 +2588,8 @@ section .engineering-engineering .popup .inner {
 }
 
 section .engineering-engineering .popup .inner .popup_intro {
-  width: calc(460/1920*100%);
-  height: 100%;
+  width: calc(640/1920*100%);
+  padding-left: 100px;
 }
 
 section .engineering-engineering .popup .inner .popup_intro .tag {
@@ -2342,8 +2624,17 @@ section .engineering-engineering .popup .inner .popup_intro .note span {
 
 section .engineering-engineering .popup .inner .popup_intro hr {
   width: 48px;
-  margin: 52px 0;
+  margin: 32px 0;
   border-color: #40220F;
+}
+
+section .engineering-engineering .popup .inner .popup_intro h4 {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-top: 10px;
+  color: #604C3F;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
 
 section .engineering-engineering .popup .inner .popup_intro p {
@@ -2351,20 +2642,62 @@ section .engineering-engineering .popup .inner .popup_intro p {
   line-height: 1.6;
   margin-top: 10px;
   color: #604C3F;
+  letter-spacing: 2px;
+}
+
+section .engineering-engineering .popup .inner .popup_intro ul {
+  margin-top: 20px;
+}
+
+section .engineering-engineering .popup .inner .popup_intro ul li {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #604C3F;
+  font-weight: 600;
+  letter-spacing: 2px;
+  position: relative;
+  padding-left: 24px;
+}
+
+section .engineering-engineering .popup .inner .popup_intro ul li:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #c9a063;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 10px;
+}
+
+section .engineering-engineering .popup .inner .popup_intro ul li.bold {
+  font-weight: 900;
 }
 
 section .engineering-engineering .popup .inner .popup_photo {
   width: calc(1200/1920*100%);
 }
 
+section .engineering-engineering .popup .inner .btnbox {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 section .engineering-engineering .popup .inner .swiper-button-prev {
   width: 48px;
   height: 48px;
-  left: 85px;
-  top: auto;
-  bottom: 25%;
+  position: relative;
+  top: unset;
+  left: unset;
+  margin-top: 0;
   background-image: url(../img/arrow_left3.svg);
   background-size: contain;
+  opacity: 1;
 }
 
 section .engineering-engineering .popup .inner .swiper-button-prev:hover {
@@ -2374,12 +2707,14 @@ section .engineering-engineering .popup .inner .swiper-button-prev:hover {
 section .engineering-engineering .popup .inner .swiper-button-next {
   width: 48px;
   height: 48px;
-  right: auto;
-  left: 150px;
-  top: auto;
-  bottom: 25%;
+  position: relative;
+  top: unset;
+  right: unset;
+  margin-top: 0;
   background-image: url(../img/arrow_right3.svg);
   background-size: contain;
+  margin-left: 20px;
+  opacity: 1;
 }
 
 section .engineering-engineering .popup .inner .swiper-button-next:hover {
@@ -2408,6 +2743,122 @@ section .engineering-engineering .popup.active {
           transform: scale(1);
 }
 
+section .engineering-engineering .popup_a11 .inner .popup_intro {
+  width: calc(720/1920*100%);
+}
+
+section .engineering-engineering .popup_a11 .inner .popup_photo {
+  width: calc(1200/1920*100%);
+}
+
+section .engineering-engineering .popup_a12 {
+  background: url(../img/engineering-popup_photo12-1.png) center center no-repeat;
+  background-size: cover;
+}
+
+section .engineering-engineering .popup_a12 .inner .popup_intro {
+  width: 65%;
+}
+
+section .engineering-engineering .popup_a12 .inner .popup_intro img {
+  width: 80%;
+  margin-top: 20px;
+}
+
+section .engineering-engineering .popup_a13 {
+  background: url(../img/engineering-popup_photo13-1.png) center center no-repeat;
+  background-size: cover;
+}
+
+section .engineering-engineering .popup_a13 .inner .popup_intro {
+  width: calc(100% - 100px);
+}
+
+section .engineering-engineering .popup_a13 .inner .popup_intro img {
+  width: 97%;
+  margin-top: 20px;
+}
+
+section .engineering-engineering .popup_a14 {
+  background: url(../img/engineering-popup_photo14-1.png) center center no-repeat;
+  background-size: cover;
+}
+
+section .engineering-engineering .popup_a14 .inner .popup_intro {
+  width: 40%;
+}
+
+section .engineering-engineering .popup_a14 .inner .popup_intro img {
+  width: 65%;
+  margin-top: 20px;
+}
+
+section .engineering-engineering .popup_a15 {
+  background: url(../img/engineering-popup_photo15-1.png) center center no-repeat;
+  background-size: cover;
+}
+
+section .engineering-engineering .popup_a15 .inner .popup_intro {
+  width: 60%;
+}
+
+section .engineering-engineering .popup_a15 .inner .popup_intro img {
+  margin-top: 20px;
+}
+
+section .engineering-engineering .popup_a16 {
+  background: url(../img/engineering-popup_photo16-1.png) center center no-repeat;
+  background-size: cover;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox .popup_intro {
+  padding-top: 120px;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox .popup_intro:nth-child(1) {
+  width: 60%;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox .popup_intro:nth-child(2) {
+  width: 40%;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox .popup_intro img {
+  width: calc(100% - 100px);
+  margin-bottom: 40px;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox.full {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox.full .popup_intro {
+  width: 100%;
+  padding-top: 20px;
+}
+
+section .engineering-engineering .popup_a16 .inner .slidebox.full .popup_intro img {
+  width: calc(100% - 100px);
+}
+
 section .construction {
   background: url(../img/construction_bg.png) center top no-repeat;
   background-size: cover;
@@ -2427,7 +2878,7 @@ section .construction .content {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding: 160px 85px 100px;
+  padding: 160px 100px 100px;
 }
 
 section .construction .content .inner {
@@ -2436,6 +2887,30 @@ section .construction .content .inner {
 
 section .construction .content .inner:nth-child(1) {
   width: 50%;
+}
+
+section .construction .content .inner .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+section .construction .content .inner .brand .logo {
+  width: 38%;
+}
+
+section .construction .content .inner .brand .features {
+  width: 59%;
 }
 
 section .construction .content .inner .spirit {
@@ -2452,17 +2927,12 @@ section .construction .content .inner .spirit {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 section .construction .content .inner .spirit img {
-  width: calc(108/800*100%);
+  width: calc(200/800*100%);
   padding: 5px;
-}
-
-section .construction .content .inner .spirit img:first-child {
-  width: calc(330/800*100%);
-  padding: 10px;
 }
 
 section .construction .content .inner .intro {
@@ -2561,23 +3031,41 @@ section .construction .content .inner .classicproject .projectgroup {
 }
 
 section .construction .content .inner .classicproject .projectgroup .item {
+  width: 33.33%;
+  height: 0;
+  padding-bottom: 33.33%;
   margin: 10px;
   position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-section .construction .content .inner .classicproject .projectgroup .item .name {
-  font-size: 21px;
-  color: #F7F8B8;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  z-index: 10;
-  letter-spacing: 4px;
+section .construction .content .inner .classicproject .projectgroup .item.item1 {
+  background-image: url(../img/construction_photo1.png);
 }
 
-section .construction .content .inner .classicproject .projectgroup .item .photo:before {
+section .construction .content .inner .classicproject .projectgroup .item.item2 {
+  background-image: url(../img/construction_photo2.png);
+}
+
+section .construction .content .inner .classicproject .projectgroup .item.item3 {
+  background-image: url(../img/construction_photo3.png);
+}
+
+section .construction .content .inner .classicproject .projectgroup .item.item4 {
+  background-image: url(../img/construction_photo4.png);
+}
+
+section .construction .content .inner .classicproject .projectgroup .item.item5 {
+  background-image: url(../img/construction_photo5.png);
+}
+
+section .construction .content .inner .classicproject .projectgroup .item.item6 {
+  background-image: url(../img/construction_photo6.png);
+}
+
+section .construction .content .inner .classicproject .projectgroup .item:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -2585,6 +3073,35 @@ section .construction .content .inner .classicproject .projectgroup .item .photo
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
+}
+
+section .construction .content .inner .classicproject .projectgroup .item .name {
+  width: 100%;
+  height: 64px;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #F7F8B8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+section .construction .content .inner .classicproject .projectgroup .item .name:before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .construction .content .inner .classicproject .projectgroup .item .name span {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 section .construction .content .inner .classicproject .projectgroup .item:hover {
@@ -2595,7 +3112,7 @@ section .construction .content .inner .classicproject .projectgroup .item:hover 
   opacity: 0;
 }
 
-section .construction .content .inner .classicproject .projectgroup .item:hover .photo:before {
+section .construction .content .inner .classicproject .projectgroup .item:hover:before {
   opacity: 0;
 }
 
