@@ -13,7 +13,7 @@ header{
         ul.nav{
             display: flex;
             gap: 30px;
-            padding: 0 120px 0 40px;
+            padding: 0 100px 0 40px;
             background: #fff;
             border-radius: 100px;
             transform-origin: 92% 50%;
@@ -151,9 +151,37 @@ header{
                     //     height: 100%;
                     // }
                 }
+
+                &.backhome{
+                    width: 42px;
+                    height: 42px;
+                    padding: 10px 0;
+                    margin: 12px auto;
+                    overflow: hidden;
+                    border-radius: 42px;
+                    // outline: 1px solid red;
+                    a{
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                        margin: 0 auto;
+                        background: url(../img/icon_home.svg) center center no-repeat;
+                    }
+                    &:hover{
+                        background: $primary-color;
+                        &:before{
+                            display: none;
+                        }
+                        a{
+                            background: url(../img/icon_home_hover.svg) center center no-repeat;
+                        }
+                    }
+                }
     
                 
             }
+
+            
 
             &.active{
                 transform: scaleX(1);
