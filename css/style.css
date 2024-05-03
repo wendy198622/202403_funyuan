@@ -630,7 +630,7 @@ section .location .content .item {
 
 section .location .content .item .introduction {
   width: calc(820/1920*100%);
-  padding: 100px 100px;
+  padding: 0 100px;
   float: left;
 }
 
@@ -754,7 +754,7 @@ section .location .content .item .introduction .introtext p {
 }
 
 section .location .content .item .photo {
-  max-width: calc(1080/1920*100%);
+  width: calc(1080/1920*100%);
   float: right;
   position: relative;
 }
@@ -784,12 +784,16 @@ section .location-environment {
 
 section .location-environment .content .item .introduction {
   width: calc(800/1920*100%);
-  padding: 100px 100px;
+  padding: 0 100px;
   float: left;
 }
 
 section .location-environment .content .item .introduction .introtext {
-  margin-top: 120px;
+  margin-top: -140px;
+}
+
+section .location-environment .content .item .introduction .introtext ul li {
+  font-size: 22px;
 }
 
 section .location-environment .content .item .photo {
@@ -903,7 +907,8 @@ section .location-location .content .item .photo .swiper-pagination span + span 
 }
 
 section .location-function {
-  background: #F2E8D1;
+  background: url(../img/location-function_bg.png) left top no-repeat #F2E8D1;
+  background-size: contain;
 }
 
 section .location-function .content .item {
@@ -1567,12 +1572,6 @@ section .architecture-public .content .floor .toptitle .txtbox .intro .listbox .
   text-align: center;
   margin-right: 10px;
   margin-bottom: 4px;
-}
-
-section .architecture-public .content .floor .toptitle .txtbox .intro .listbox .list:hover {
-  background: #7F4F21;
-  border-radius: 20px;
-  cursor: pointer;
 }
 
 section .architecture-public .content .floor .photo {
@@ -2568,6 +2567,8 @@ section .engineering-engineering .content .item .photogroup .photo .link .linka 
   background-size: cover;
   -webkit-transform-origin: center center;
           transform-origin: center center;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -2739,9 +2740,13 @@ section .engineering-engineering .popup .inner {
   overflow: hidden;
 }
 
+section .engineering-engineering .popup .inner .slick-list {
+  height: 100vh;
+}
+
 section .engineering-engineering .popup .inner .slidebox {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -2759,7 +2764,6 @@ section .engineering-engineering .popup .inner .slidebox {
 
 section .engineering-engineering .popup .inner .popup_intro {
   width: calc(640/1920*100%);
-  margin-top: -100px;
   padding-left: 100px;
 }
 
@@ -2948,7 +2952,7 @@ section .engineering-engineering .popup_a13 {
 
 section .engineering-engineering .popup_a13 .inner .popup_intro {
   width: calc(100% - 100px);
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 section .engineering-engineering .popup_a13 .inner .popup_intro img {
@@ -2963,7 +2967,6 @@ section .engineering-engineering .popup_a14 {
 
 section .engineering-engineering .popup_a14 .inner .popup_intro {
   width: 40%;
-  margin-top: 120px;
 }
 
 section .engineering-engineering .popup_a14 .inner .popup_intro img {
@@ -2978,7 +2981,6 @@ section .engineering-engineering .popup_a15 {
 
 section .engineering-engineering .popup_a15 .inner .popup_intro {
   width: 60%;
-  margin-top: 120px;
 }
 
 section .engineering-engineering .popup_a15 .inner .popup_intro img {
