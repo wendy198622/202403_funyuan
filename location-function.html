@@ -106,50 +106,52 @@
                         </div>
                     </div>
                     <div class="map_photo">
-                        <div class="map_photo_bg">
-                            <!-- <img src="img/function_map.png" alt=""> -->
-                        </div>
-                        <div class="map_photo_location">
-                            <div class="map_photo_location_box map_photo_location_box1">
-                                <div class="map_photo_location_list map_photo_location1-1">
-                                    <span>北投中繼市場</span>
-                                    <img src="img/location_icon.svg" alt="">
-                                </div>
-                                <div class="map_photo_location_list map_photo_location1-2">
-                                    <span>公館公園</span>
-                                    <img src="img/location_icon.svg" alt="">
-                                </div>
-                                <div class="map_photo_location_list map_photo_location1-3">
-                                    <span>家樂福超市</span>
-                                    <img src="img/location_icon.svg" alt="">
-                                </div>
-                                <div class="map_photo_location_list map_photo_location1-4">
-                                    <span>奇岩一號公園</span>
-                                    <img src="img/location_icon.svg" alt="">
-                                </div>
-                                <div class="map_photo_location_list map_photo_location1-5">
-                                    <span>奇岩二號公園</span>
-                                    <img src="img/location_icon.svg" alt="">
-                                </div>
-                                <div class="map_photo_location_list map_photo_location1-6">
-                                    <span>奇岩三號公園</span>
-                                    <img src="img/location_icon.svg" alt="">
-                                </div>
-                                <div class="map_photo_location_list map_photo_location1-7">
-                                    <span>奇岩四號公園</span>
-                                    <img src="img/location_icon.svg" alt="">
-                                </div>
+                        <div class="inner_container">
+                            <div class="map_photo_bg">
+                                <!-- <img src="img/function_map.png" alt=""> -->
                             </div>
-                            <div class="map_photo_location_box map_photo_location_box2">
-                                <div class="map_photo_location_list map_photo_location2-1">
-                                    <span>清江國小</span>
-                                    <img src="img/location_icon.svg" alt="">
+                            <div class="map_photo_location">
+                                <div class="map_photo_location_box map_photo_location_box1">
+                                    <div class="map_photo_location_list map_photo_location1-1">
+                                        <span>北投中繼市場</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
+                                    <div class="map_photo_location_list map_photo_location1-2">
+                                        <span>公館公園</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
+                                    <div class="map_photo_location_list map_photo_location1-3">
+                                        <span>家樂福超市</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
+                                    <div class="map_photo_location_list map_photo_location1-4">
+                                        <span>奇岩一號公園</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
+                                    <div class="map_photo_location_list map_photo_location1-5">
+                                        <span>奇岩二號公園</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
+                                    <div class="map_photo_location_list map_photo_location1-6">
+                                        <span>奇岩三號公園</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
+                                    <div class="map_photo_location_list map_photo_location1-7">
+                                        <span>奇岩四號公園</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="map_photo_location_box map_photo_location_box3">
-                                <div class="map_photo_location_list map_photo_location3-1">
-                                    <span>捷運奇岩站</span>
-                                    <img src="img/location_icon.svg" alt="">
+                                <div class="map_photo_location_box map_photo_location_box2">
+                                    <div class="map_photo_location_list map_photo_location2-1">
+                                        <span>清江國小</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="map_photo_location_box map_photo_location_box3">
+                                    <div class="map_photo_location_list map_photo_location3-1">
+                                        <span>捷運奇岩站</span>
+                                        <img src="img/location_icon.svg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -494,6 +496,14 @@
         $('.popup_close').on('click', function () {
             $('.popup').removeClass('active');
         });
+
+
+        var container = document.querySelector('.inner_container');
+        var currentTransform = window.getComputedStyle(container).getPropertyValue('transform');
+        var currentScale = parseFloat(currentTransform.split(',')[3] || 1);
+
+        // 放大div
+        container.style.transform = 'scale(' + (currentScale + 1) + ')'; // 这里的0.1是放大的比例增量
 
 
     });

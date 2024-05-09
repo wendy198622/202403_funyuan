@@ -969,16 +969,23 @@ section .location-function .content .item .map_photo {
   position: relative;
   padding-left: 10px;
   background: #FFD297;
+  overflow: hidden;
 }
 
-section .location-function .content .item .map_photo .map_photo_bg {
+section .location-function .content .item .map_photo .inner_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_bg {
   width: 100%;
   height: 100%;
   background: url(../img/function_map.png) center center no-repeat;
   background-size: cover;
 }
 
-section .location-function .content .item .map_photo .map_photo_location {
+section .location-function .content .item .map_photo .inner_container .map_photo_location {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -986,14 +993,14 @@ section .location-function .content .item .map_photo .map_photo_location {
   left: 0;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box {
   width: 100%;
   height: 100%;
   opacity: 0;
   visibility: hidden;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list {
   position: absolute;
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
@@ -1001,7 +1008,7 @@ section .location-function .content .item .map_photo .map_photo_location .map_ph
   transition: all .3s;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list span {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list span {
   font-size: 16px;
   display: block;
   text-align: center;
@@ -1015,69 +1022,69 @@ section .location-function .content .item .map_photo .map_photo_location .map_ph
   transition: all .3s;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list img {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list img {
   width: 40px;
   margin: 0 auto;
   -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.6));
           filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.6));
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-1 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-1 {
   top: 33%;
   right: 27.5%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-2 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-2 {
   top: 51%;
   right: 31%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-3 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-3 {
   top: 59%;
   right: 20.2%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-4 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-4 {
   top: 37.4%;
   left: 32.2%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-5 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-5 {
   top: 69.4%;
   left: 33.2%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-6 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-6 {
   top: 79.4%;
   left: 46.2%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-7 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location1-7 {
   top: 70%;
   left: 56.2%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location2-1 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location2-1 {
   top: 79.8%;
   right: 28.5%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-1 {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-1 {
   top: 74%;
   left: 10%;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list:hover {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list:hover {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box .map_photo_location_list:hover span {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list:hover span {
   opacity: 1;
 }
 
-section .location-function .content .item .map_photo .map_photo_location .map_photo_location_box.active {
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box.active {
   opacity: 1;
   visibility: visible;
 }
