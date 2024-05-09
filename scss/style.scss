@@ -235,13 +235,6 @@ section{
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            // &:before{
-            //     content: "";
-            //     width: 0;
-            //     height: 100%;
-            //     display: inline-block;
-            //     vertical-align: middle;
-            // }
             .item{
                 width: 100%;
                 display: flex;
@@ -281,7 +274,7 @@ section{
                             display: inline-block;
                             color: $secondary-color;
                             font-family: $_font-serif;
-                            font-size: 30px;
+                            font-size: 32px;
                             line-height: 140%;
                             letter-spacing: 3px;
                             font-weight: 700;
@@ -344,7 +337,7 @@ section{
                                 li{
                                     display: inline-block;
                                     padding: 4px 14px 4px 18px;
-                                    font-size: 18px;
+                                    font-size: 20px;
                                     line-height: 160%;
                                     letter-spacing: 4px;
                                     font-weight: 400;
@@ -362,7 +355,7 @@ section{
                         }
                         p{
                             color: #604C3F;
-                            font-size: 20px;
+                            font-size: 22px;
                             line-height: 180%;
                             letter-spacing: 2px;
                             font-weight: 400;
@@ -389,7 +382,7 @@ section{
 
             }
             .decorate{
-                width: calc(1454/1920*100%);
+                width: calc(790/1920*100%);
                 position: absolute;
                 left: 5px;
                 bottom: 5px;
@@ -415,7 +408,7 @@ section{
 
                 }
                 .photo{
-                    max-width: calc(1120/1920*100%);
+                    width: calc(1160/1920*100%);
                     float: right;
                 }
             }
@@ -431,11 +424,8 @@ section{
                 justify-content: space-between;
                 align-items: center;
                 .introduction{
-                    // width: calc(800/1920*100%);
-                    // padding: 0 80px;
                     float: unset;
                     .tabbox{
-                        // padding-top: 100px;
                         li{
                             display: inline-block;
                             color: $primary-color;
@@ -463,8 +453,8 @@ section{
                         h6{
                             display: inline-block;
                             padding: 4px 8px 4px 12px;
-                            font-size: 18px;
-                            line-height: 120%;
+                            font-size: 20px;
+                            line-height: 140%;
                             letter-spacing: 4px;
                             font-weight: 400;
                             border: 1px solid $fonts-color2;
@@ -474,6 +464,7 @@ section{
                         p{
                             margin-bottom: 20px;
                             margin-top: 10px;
+                            text-align: justify;
                         }
                     }
                 }
@@ -523,6 +514,12 @@ section{
                     width: calc(100% - 1280px);
                     padding: 100px 100px;
                     // float: left; 
+                    .introtext{
+                        p{
+                            color: #40220f;
+                            letter-spacing: 3px;
+                        }
+                    }
                     .map_nav{
                         margin-top: 100px;
                         .map_nav_list{
@@ -531,7 +528,7 @@ section{
                             line-height: 140%;
                             letter-spacing: 6px;
                             margin-bottom: 26px;
-                            color: #A48B78;
+                            color: #40220f;
                             transition: all .3s;
                             position: relative;
                             &:after{
@@ -935,18 +932,19 @@ section{
                             line-height: 140%;
                             letter-spacing: 2px;
                             font-family: $_font-serif;
-                            font-weight: 600;
+                            font-weight: 700;
                             color: #40220F;
                             text-align: left;
                         }
                         p{
                             width: 100%;
-                            font-size: 25px;
-                            line-height: 150%;
-                            letter-spacing: 3px;
-                            color: #956134;
                             text-align: left;
                             margin: 0;
+                            color: #604C3F;
+                            font-size: 22px;
+                            line-height: 180%;
+                            letter-spacing: 2px;
+                            font-weight: 400;
                         }
                     }
                 }
@@ -1053,7 +1051,7 @@ section{
                     // width: calc(1082/1920*100%);
                     width: 100%;
                     margin: 0 auto;
-                    padding-top: 20px;
+                    // padding-top: 20px;
                 }
 
                 .swiper-button-prev{
@@ -2127,7 +2125,7 @@ section{
                     height: 48px;
                     position: absolute;
                     z-index: 10;
-                    top: 78%;
+                    top: 80%;
                     left: 100px;
                     margin-top: 0;
                     background-color: transparent;
@@ -2143,7 +2141,7 @@ section{
                     height: 48px;
                     position: absolute;
                     z-index: 10;
-                    top: 78%;
+                    top: 80%;
                     right: unset;
                     left: 140px;
                     margin-top: 0;
@@ -2182,6 +2180,7 @@ section{
             .inner{
                 .popup_intro{
                     width: calc(720/1920*100%);
+                    margin-top: -60px;
                 }
                 .popup_photo{
                     width: calc(1200/1920*100%);
@@ -2336,6 +2335,7 @@ section{
                 }
                 .intro{
                     margin-top: 20px;
+                    padding-right: 50px;
                     h3{
                         font-size: 32px;
                         line-height: 2;
@@ -2345,12 +2345,13 @@ section{
                     }
                     p{
                         width: 100%;
-                        font-size: 18px;
+                        font-size: 20px;
                         line-height: 1.6;
                         color: #fff;
                         letter-spacing: 2px;
                         font-weight: 200;
                         margin-top: 10px;
+                        text-align: justify;
                     }
                 }
                 .oldproject{

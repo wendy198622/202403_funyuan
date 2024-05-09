@@ -664,7 +664,7 @@ section .location .content .item .introduction .introtext h4 {
   display: inline-block;
   color: #b28247;
   font-family: "Noto Serif TC", serif;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 140%;
   letter-spacing: 3px;
   font-weight: 700;
@@ -728,7 +728,7 @@ section .location .content .item .introduction .introtext ul li::before {
 section .location .content .item .introduction .introtext ul.inline li {
   display: inline-block;
   padding: 4px 14px 4px 18px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 160%;
   letter-spacing: 4px;
   font-weight: 400;
@@ -747,7 +747,7 @@ section .location .content .item .introduction .introtext ul.inline li:first-chi
 
 section .location .content .item .introduction .introtext p {
   color: #604C3F;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 180%;
   letter-spacing: 2px;
   font-weight: 400;
@@ -771,7 +771,7 @@ section .location .content .item .photo .swiper-slide > span {
 }
 
 section .location .content .decorate {
-  width: calc(1454/1920*100%);
+  width: calc(790/1920*100%);
   position: absolute;
   left: 5px;
   bottom: 5px;
@@ -797,7 +797,7 @@ section .location-environment .content .item .introduction .introtext ul li {
 }
 
 section .location-environment .content .item .photo {
-  max-width: calc(1120/1920*100%);
+  width: calc(1160/1920*100%);
   float: right;
 }
 
@@ -859,8 +859,8 @@ section .location-location .content .item .introduction .introtext {
 section .location-location .content .item .introduction .introtext h6 {
   display: inline-block;
   padding: 4px 8px 4px 12px;
-  font-size: 18px;
-  line-height: 120%;
+  font-size: 20px;
+  line-height: 140%;
   letter-spacing: 4px;
   font-weight: 400;
   border: 1px solid #604C3F;
@@ -871,6 +871,7 @@ section .location-location .content .item .introduction .introtext h6 {
 section .location-location .content .item .introduction .introtext p {
   margin-bottom: 20px;
   margin-top: 10px;
+  text-align: justify;
 }
 
 section .location-location .content .item .photo {
@@ -920,6 +921,11 @@ section .location-function .content .item .introduction {
   padding: 100px 100px;
 }
 
+section .location-function .content .item .introduction .introtext p {
+  color: #40220f;
+  letter-spacing: 3px;
+}
+
 section .location-function .content .item .introduction .map_nav {
   margin-top: 100px;
 }
@@ -930,7 +936,7 @@ section .location-function .content .item .introduction .map_nav .map_nav_list {
   line-height: 140%;
   letter-spacing: 6px;
   margin-bottom: 26px;
-  color: #A48B78;
+  color: #40220f;
   -webkit-transition: all .3s;
   transition: all .3s;
   position: relative;
@@ -1457,19 +1463,20 @@ section .architecture-outward .content .intro .box .text h3 {
   line-height: 140%;
   letter-spacing: 2px;
   font-family: "Noto Serif TC", serif;
-  font-weight: 600;
+  font-weight: 700;
   color: #40220F;
   text-align: left;
 }
 
 section .architecture-outward .content .intro .box .text p {
   width: 100%;
-  font-size: 25px;
-  line-height: 150%;
-  letter-spacing: 3px;
-  color: #956134;
   text-align: left;
   margin: 0;
+  color: #604C3F;
+  font-size: 22px;
+  line-height: 180%;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 section .architecture-public {
@@ -1577,7 +1584,6 @@ section .architecture-public .content .floor .toptitle .txtbox .intro .listbox .
 section .architecture-public .content .floor .photo {
   width: 100%;
   margin: 0 auto;
-  padding-top: 20px;
 }
 
 section .architecture-public .content .floor .swiper-button-prev {
@@ -2868,7 +2874,7 @@ section .engineering-engineering .popup .inner .prev-arrow {
   height: 48px;
   position: absolute;
   z-index: 10;
-  top: 78%;
+  top: 80%;
   left: 100px;
   margin-top: 0;
   background-color: transparent;
@@ -2886,7 +2892,7 @@ section .engineering-engineering .popup .inner .next-arrow {
   height: 48px;
   position: absolute;
   z-index: 10;
-  top: 78%;
+  top: 80%;
   right: unset;
   left: 140px;
   margin-top: 0;
@@ -2925,6 +2931,7 @@ section .engineering-engineering .popup.active {
 
 section .engineering-engineering .popup_a11 .inner .popup_intro {
   width: calc(720/1920*100%);
+  margin-top: -60px;
 }
 
 section .engineering-engineering .popup_a11 .inner .popup_photo {
@@ -3120,6 +3127,7 @@ section .construction .content .inner .spirit img {
 
 section .construction .content .inner .intro {
   margin-top: 20px;
+  padding-right: 50px;
 }
 
 section .construction .content .inner .intro h3 {
@@ -3132,12 +3140,13 @@ section .construction .content .inner .intro h3 {
 
 section .construction .content .inner .intro p {
   width: 100%;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   color: #fff;
   letter-spacing: 2px;
   font-weight: 200;
   margin-top: 10px;
+  text-align: justify;
 }
 
 section .construction .content .inner .oldproject {
