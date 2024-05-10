@@ -514,6 +514,7 @@ section{
                     width: calc(100% - 1280px);
                     padding: 100px 100px;
                     // float: left; 
+                    user-select: none;
                     .introtext{
                         p{
                             color: #40220f;
@@ -558,9 +559,19 @@ section{
                     height: 100%;
                     // float: right;
                     position: relative;
-                    padding-left: 10px;
+                    // padding-left: 10px;
                     background: #FFD297;
                     overflow: hidden;
+                    &:before{
+                        content: "";
+                        width: 10px;
+                        height: 100%;
+                        background: #FFD297;
+                        position: absolute;
+                        z-index: 10;
+                        top: 0;
+                        left: 0;
+                    }
                     .inner_container{
                         width: 100%;
                         height: 100%;

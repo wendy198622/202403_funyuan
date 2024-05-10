@@ -71,9 +71,10 @@ header {
 
 header nav {
   float: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+}
+
+header nav.active {
+  width: 100%;
 }
 
 header nav ul.nav {
@@ -84,8 +85,8 @@ header nav ul.nav {
   padding: 0 100px 0 40px;
   background: #fff;
   border-radius: 100px;
-  -webkit-transform-origin: 92% 50%;
-          transform-origin: 92% 50%;
+  -webkit-transform-origin: 98% 50%;
+          transform-origin: 98% 50%;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transition: all .3s;
@@ -919,6 +920,10 @@ section .location-function .content .item {
 section .location-function .content .item .introduction {
   width: calc(100% - 1280px);
   padding: 100px 100px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 section .location-function .content .item .introduction .introtext p {
@@ -967,9 +972,19 @@ section .location-function .content .item .map_photo {
   width: 1280px;
   height: 100%;
   position: relative;
-  padding-left: 10px;
   background: #FFD297;
   overflow: hidden;
+}
+
+section .location-function .content .item .map_photo:before {
+  content: "";
+  width: 10px;
+  height: 100%;
+  background: #FFD297;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
 }
 
 section .location-function .content .item .map_photo .inner_container {

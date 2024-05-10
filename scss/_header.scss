@@ -7,8 +7,12 @@ header{
     top: 48px;
     // overflow: hidden;
     nav{
+        // width: 80px;
         float: right;
-        display: flex;
+        // display: inline-block;
+        &.active{
+            width: 100%;
+        }
     
         ul.nav{
             display: flex;
@@ -16,7 +20,7 @@ header{
             padding: 0 100px 0 40px;
             background: #fff;
             border-radius: 100px;
-            transform-origin: 92% 50%;
+            transform-origin: 98% 50%;
             transform: scaleX(0);
             transition: all .3s;
             margin-right: 5px;
