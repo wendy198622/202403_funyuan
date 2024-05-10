@@ -97,16 +97,16 @@
                             <div class="map_nav_list map_nav_list3">好便捷</div>
                         </div>
                         <div class="zoom">
-                            <div class="zoom_list">
+                            <div class="zoom_list" onclick="zoom_in()">
                                 <i class="material-icons">add</i>
                             </div>
-                            <div class="zoom_list">
+                            <div class="zoom_list" onclick="zoom_out()">
                                 <i class="material-icons">remove</i>
                             </div>
                         </div>
                     </div>
                     <div class="map_photo">
-                        <div class="inner_container" onmousedown="startDrag(event)" onmouseup="stopDrag(event)">
+                        <div class="inner_container" onmousedown="startDrag(event)" onmouseup="stopDrag(event)" onmouseleave="mouseLeave()">
                             <div class="map_photo_bg" draggable="false">
                                 <!-- <img src="img/function_map.png" alt=""> -->
                             </div>
@@ -455,12 +455,13 @@
 
 <script>
 
+
+
+
     $(document).ready(function () {
 
         // $('#header').load('page/header.html');
         // $('#footer').load('page/footer.html');
-        
-
         $(".slider1-1").slick({
             arrows: true
         });
@@ -541,13 +542,12 @@
         });
 
 
-        // var container = document.querySelector('.inner_container');
-        // var currentTransform = window.getComputedStyle(container).getPropertyValue('transform');
-        // var currentScale = parseFloat(currentTransform.split(',')[3] || 1);
 
-        // // 放大div
-        // container.style.transform = 'scale(' + (/*currentScale +*/ 1) + ')'; // 这里的0.1是放大的比例增量
-
+        // 放大div
+        var container = document.querySelector('.inner_container');
+        let transf  = getTransform(container)
+        transf.multiple = 1
+        container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${transf.transX}, ${transf.transY})`
     });
 
 
@@ -557,136 +557,121 @@
 
     });
 
-        // var offsetX, offsetY;
-        // var _top, _left;
+        var offsetX, offsetY;
+        var _top, _left;
+        var multiple = 1
 
-        // var getcss = function(o,key)
-        // {
-        //     return o.currentStyle? o.currentStyle[key] : document.defaultview.getComputedStyle(o,false)[key];
-        // }
+        function zoom_in(){
+            var container = document.querySelector('.inner_container');
+            let transf  = getTransform(container)
+            transf.multiple = transf.multiple + 0.5
+            if(transf.multiple >= 2){
+                transf.multiple = 2
+            }
+            container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${transf.transX}, ${transf.transY})`
+        }
 
-        // const getTransform = DOM => {
-        //     let arr = getComputedStyle(DOM).transform.split(',')
-        //     return {
-        //         transX: isNaN(+arr[arr.length - 2]) ? 0 : +arr[arr.length - 2], // 获取translateX
-        //         transY: isNaN(+arr[arr.length - 1].split(')')[0]) ? 0 : +arr[arr.length - 1].split(')')[0], // 获取translateX
-        //         multiple: +arr[3] // 获取图片缩放比例
-        //     }
-        // }
+        function zoom_out(){
+            var container = document.querySelector('.inner_container');
+            let { clientWidth: innerWidth, clientHeight: innerHeight, offsetLeft: innerLeft, offsetTop: innerTop } = document.querySelector('.inner_container')
+            let { clientWidth: outerWidth, clientHeight: outerHeight } = document.querySelector('.map_photo') 
 
-        // function startDrag(e) {
-        //     console.log("startDrag")
-        //     e.preventDefault();
-        //     var container = document.querySelector('.inner_container');
-        //     // var overlay = document.querySelector('.overlay');
-        //     // offsetX = e.clientX - container.getBoundingClientRect().left;
-        //     // offsetY = e.clientY - container.getBoundingClientRect().top;
+            let transf  = getTransform(container)
+            transf.multiple = transf.multiple - 0.5
+            if(transf.multiple < 1){
+                transf.multiple = 1
+            }
 
-        //     offsetX = e.clientX - container.offsetLeft;
-        //     offsetY = e.clientY - container.offsetTop;
+            if(transf.multiple == 1){
+                container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${0}, ${0})`
+            }else{
+                container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${transf.transX}, ${transf.transY})`
+                moveX = 625
+                moveY = -7
+                let multiple = transf.multiple
+                if (innerWidth * multiple > outerWidth || innerHeight * multiple > outerHeight) {
+                    console.log("1")
 
-        //     let transf = getTransform(container)
-        //     offsetX = e.clientX - transf.transX // 图片初始位置
-        //     offsetY = e.clientY - transf.transY // 图片初始位置
+                    if (innerWidth * multiple > outerWidth && innerWidth * multiple > outerHeight) {
+                        transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                        transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                    } else if (innerWidth * multiple > outerWidth && !(innerWidth * multiple > outerHeight)) {
+                        console.log("3")
+                        transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                        transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                    } else if (!(innerWidth * multiple > outerWidth) && innerWidth * multiple > outerHeight) {
+                        console.log("4")
+                        transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                        transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                    }
+                }
+                container.style.transform = `matrix(${multiple}, 0, 0, ${multiple}, ${transX}, ${transY})`
+            }
+        }
 
-        //     // console.log("x:" + x + " y:" + y)
-
-        //     // _top = getcss(container,"top")
-        //     // _left = getcss(container,"left")
-
-        //     // overlay.style.display = 'block'; // 显示被遮蔽的区域
-        //     console.log("offsetX:" + offsetX + " offsetY:" + offsetY)
-        //     document.onmousemove = drag;
-        // }
 
 
+        var getcss = function(o,key)
+        {
+            return o.currentStyle? o.currentStyle[key] : document.defaultview.getComputedStyle(o,false)[key];
+        }
 
+        const getTransform = DOM => {
+            let arr = getComputedStyle(DOM).transform.split(',')
+            return {
+                transX: isNaN(+arr[arr.length - 2]) ? 0 : +arr[arr.length - 2], // 获取translateX
+                transY: isNaN(+arr[arr.length - 1].split(')')[0]) ? 0 : +arr[arr.length - 1].split(')')[0], // 获取translateX
+                multiple: +arr[3] // 获取图片缩放比例
+            }
+        }
 
+        function startDrag(e) {
+            e.preventDefault();
+            var container = document.querySelector('.inner_container');
+            let transf = getTransform(container)
+            offsetX = e.clientX - transf.transX // 图片初始位置
+            offsetY = e.clientY - transf.transY // 图片初始位置
+            document.onmousemove = drag;
+        }
 
-        // function drag(e) {
-        //     console.log("drag")
-        //     var container = document.querySelector('.inner_container');
-        //     let { clientWidth: innerWidth, clientHeight: innerHeight, offsetLeft: innerLeft, offsetTop: innerTop } = document.querySelector('.map_photo')
-        //     let { clientWidth: outerWidth, clientHeight: outerHeight } = document.querySelector('.inner_container') 
-        //     let multiple = getTransform(container).multiple
-        //     moveX = e.clientX - offsetX
-        //     moveY = e.clientY - offsetY
+        function drag(e) {
+
+            var container = document.querySelector('.inner_container');
+            let { clientWidth: innerWidth, clientHeight: innerHeight, offsetLeft: innerLeft, offsetTop: innerTop } = document.querySelector('.inner_container')
+            let { clientWidth: outerWidth, clientHeight: outerHeight } = document.querySelector('.map_photo') 
+            let multiple = getTransform(container).multiple
+            moveX = e.clientX - offsetX
+            moveY = e.clientY - offsetY
             
 
-        //     console.log("innerWidth ", innerWidth * multiple," innerHeight", innerHeight* multiple)
-        //     console.log("outerWidth ", outerWidth ," outerHeight", outerHeight)
-        //     // console.log("e.clientX:" + e.clientX + " e.clientY:" + e.clientY)
+            let transX = 0
+            let transY = 0
+            if (innerWidth * multiple > outerWidth || innerHeight * multiple > outerHeight) {
+                if (innerWidth * multiple > outerWidth && innerWidth * multiple > outerHeight) {
+                    transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                    transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                } else if (innerWidth * multiple > outerWidth && !(innerWidth * multiple > outerHeight)) {
+                    transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                    transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                } else if (!(innerWidth * multiple > outerWidth) && innerWidth * multiple > outerHeight) {
+                    transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                    transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                }
+            }else{
+                transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+            }
+            container.style.transform = `matrix(${multiple}, 0, 0, ${multiple}, ${transX}, ${transY})`
 
-        //     // container.style.left = (e.clientX - offsetX) + 'px';
-        //     // container.style.top = (e.clientY - offsetY) + 'px';
+        }
 
-        //     if (innerWidth * multiple > outerWidth || innerHeight * multiple > outerHeight) {
-        //         if (innerWidth * multiple > outerWidth && innerWidth * multiple > outerHeight) {
-        //             transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
-        //             transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
-        //         } else if (innerWidth * multiple > outerWidth && !(innerWidth * multiple > outerHeight)) {
-        //             transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
-        //             transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
-        //         } else if (!(innerWidth * multiple > outerWidth) && innerWidth * multiple > outerHeight) {
-        //             transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
-        //             transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
-        //         }
-        //     }
-        //     // transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
-        //     // transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
-        //     container.style.transform = `matrix(${multiple}, 0, 0, ${multiple}, ${transX}, ${transY})`
+        function stopDrag() {
+            document.onmousemove = null;
+        }
 
-        //     console.log("transX:" + transX + " transY:" + transY)
-        //     // container.style.top = /*parseInt(_top)  +*/ transY + 'px'
-        //     // container.style.left = /*parseInt(_left)  +*/ transX + 'px'
-
-
-        //     // var left = e.clientX - offsetX
-        //     // var top = e.clientY - offsetY
-
-        //     let div_top = container.getBoundingClientRect().top
-        //     // console.log("container.innerWidth:" + container.innerWidth + " container.innerHeight:" + container.innerHeight)
-        //     // console.log("window.innerWidth:" + window.innerWidth + " window.innerHeight:" + window.innerHeight)
-        //     // console.log("getBoundingClientRect().left:" + container.getBoundingClientRect().left + " getBoundingClientRect().top:" + div_top)
-        //     // console.log("e.clientX ",e.clientX ,"e.clientY ",e.clientY)
-
-        //     // if (div_top > 0){
-        //     //     console.log("div_top > 0 " + div_top)
-        //     //     top = 0
-        //     // }else{
-        //     // }
-
-
-
-        //     // 控制拖拽物体的范围只能在浏览器视窗内，不允许出现滚动条
-        //     // if (left < 0) {
-        //     //     left = 0
-        //     // } else if (left > window.innerWidth - container.offsetWidth) {
-        //     //     left = window.innerWidth - container.offsetWidth
-        //     // }
-        //     // if (top < 0) {
-        //     //     top = 0
-        //     // } else if (top > window.innerHeight - container.offsetHeight) {
-        //     //     top = window.innerHeight - container.offsetHeight
-        //     // }
-
-        //     // 移动时重新得到物体的距离，解决拖动时出现晃动的现象
-            
-        //     // container.style.top = /*parseInt(_top)  +*/ top + 'px'
-        //     // container.style.left = /*parseInt(_left)  +*/ left + 'px'
-        //     // console.log("set left:" + container.style.left + " top:" + container.style.top)
-        // }
-
-        // function stopDrag() {
-        //     console.log("stopDrag")
-        //     var container = document.querySelector('.inner_container');
-        //     console.log("getBoundingClientRect().left:" + container.getBoundingClientRect().left + " getBoundingClientRect().top:" + container.getBoundingClientRect().top)
-        //     // var overlay = document.querySelector('.overlay');
-        //     // overlay.style.display = 'none'; // 隐藏被遮蔽的区域
-            
-        //     console.log("get left:" + container.style.left + " top:" + container.style.top)
-        //     document.onmousemove = null;
-        // }
+        function mouseLeave() {
+            stopDrag()
+        }
 
 
 </script>
