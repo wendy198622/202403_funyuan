@@ -2511,6 +2511,7 @@ section .engineering-materials .content .item .photo span {
   color: #956134;
   font-weight: 100;
   font-size: 12px;
+  z-index: 10;
 }
 
 section .engineering-materials .content .item .photo .photogroup {
