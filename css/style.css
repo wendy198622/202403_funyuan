@@ -975,6 +975,8 @@ section .location-function .content .item .map_photo {
 section .location-function .content .item .map_photo .inner_container {
   width: 100%;
   height: 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
   position: relative;
 }
 
@@ -982,7 +984,9 @@ section .location-function .content .item .map_photo .inner_container .map_photo
   width: 100%;
   height: 100%;
   background: url(../img/function_map.png) center center no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 section .location-function .content .item .map_photo .inner_container .map_photo_location {
@@ -1069,11 +1073,6 @@ section .location-function .content .item .map_photo .inner_container .map_photo
   right: 28.5%;
 }
 
-section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-1 {
-  top: 74%;
-  left: 10%;
-}
-
 section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list:hover {
   cursor: pointer;
   -webkit-transform: scale(1.1);
@@ -1082,6 +1081,66 @@ section .location-function .content .item .map_photo .inner_container .map_photo
 
 section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list:hover span {
   opacity: 1;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-1 {
+  top: 74%;
+  left: 10%;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-2 {
+  top: 16%;
+  left: 14%;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-2:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-3 {
+  top: 60%;
+  left: 13%;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-3:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-4 {
+  top: 68%;
+  left: 15.5%;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-4:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-5 {
+  top: 21%;
+  right: 22%;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-5:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-6 {
+  top: 60%;
+  right: 24%;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-7 {
+  top: 53%;
+  right: 12%;
+}
+
+section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box .map_photo_location_list.map_photo_location3-7:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 section .location-function .content .item .map_photo .inner_container .map_photo_location .map_photo_location_box.active {
