@@ -751,9 +751,130 @@
         $('.photo_group-close').on('click', function () {
             $(this).parent().removeClass('active');
         });
+
+        
+        // 放大div
+        var container = document.querySelector('.photo.js_height');
+        let transf  = getTransform(container)
+        transf.multiple = 2
+        container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${transf.transX}, ${transf.transY})`
         
     })
+    var offsetX, offsetY;
+        var _top, _left;
+        var multiple = 1
 
+        function zoom_in(){
+            var container = document.querySelector('.inner_container');
+            let transf  = getTransform(container)
+            transf.multiple = transf.multiple + 0.5
+            if(transf.multiple >= 2){
+                transf.multiple = 2
+            }
+            container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${transf.transX}, ${transf.transY})`
+        }
+
+        function zoom_out(){
+            var container = document.querySelector('.inner_container');
+            let { clientWidth: innerWidth, clientHeight: innerHeight, offsetLeft: innerLeft, offsetTop: innerTop } = document.querySelector('.inner_container')
+            let { clientWidth: outerWidth, clientHeight: outerHeight } = document.querySelector('.map_photo') 
+
+            let transf  = getTransform(container)
+            transf.multiple = transf.multiple - 0.5
+            if(transf.multiple < 1){
+                transf.multiple = 1
+            }
+
+            if(transf.multiple == 1){
+                container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${0}, ${0})`
+            }else{
+                container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${transf.transX}, ${transf.transY})`
+                moveX = 625
+                moveY = -7
+                let multiple = transf.multiple
+                if (innerWidth * multiple > outerWidth || innerHeight * multiple > outerHeight) {
+                    console.log("1")
+
+                    if (innerWidth * multiple > outerWidth && innerWidth * multiple > outerHeight) {
+                        transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                        transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                    } else if (innerWidth * multiple > outerWidth && !(innerWidth * multiple > outerHeight)) {
+                        console.log("3")
+                        transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                        transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                    } else if (!(innerWidth * multiple > outerWidth) && innerWidth * multiple > outerHeight) {
+                        console.log("4")
+                        transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                        transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                    }
+                }
+                container.style.transform = `matrix(${multiple}, 0, 0, ${multiple}, ${transX}, ${transY})`
+            }
+        }
+
+
+
+        var getcss = function(o,key)
+        {
+            return o.currentStyle? o.currentStyle[key] : document.defaultview.getComputedStyle(o,false)[key];
+        }
+
+        const getTransform = DOM => {
+            let arr = getComputedStyle(DOM).transform.split(',')
+            return {
+                transX: isNaN(+arr[arr.length - 2]) ? 0 : +arr[arr.length - 2], // 获取translateX
+                transY: isNaN(+arr[arr.length - 1].split(')')[0]) ? 0 : +arr[arr.length - 1].split(')')[0], // 获取translateX
+                multiple: +arr[3] // 获取图片缩放比例
+            }
+        }
+
+        function startDrag(e) {
+            e.preventDefault();
+            var container = document.querySelector('.inner_container');
+            let transf = getTransform(container)
+            offsetX = e.clientX - transf.transX // 图片初始位置
+            offsetY = e.clientY - transf.transY // 图片初始位置
+            document.onmousemove = drag;
+        }
+
+        function drag(e) {
+
+            var container = document.querySelector('.inner_container');
+            let { clientWidth: innerWidth, clientHeight: innerHeight, offsetLeft: innerLeft, offsetTop: innerTop } = document.querySelector('.inner_container')
+            let { clientWidth: outerWidth, clientHeight: outerHeight } = document.querySelector('.map_photo') 
+            let multiple = getTransform(container).multiple
+            moveX = e.clientX - offsetX
+            moveY = e.clientY - offsetY
+            
+
+            let transX = 0
+            let transY = 0
+            if (innerWidth * multiple > outerWidth || innerHeight * multiple > outerHeight) {
+                if (innerWidth * multiple > outerWidth && innerWidth * multiple > outerHeight) {
+                    transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                    transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                } else if (innerWidth * multiple > outerWidth && !(innerWidth * multiple > outerHeight)) {
+                    transX = Math.min(Math.max(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                    transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                } else if (!(innerWidth * multiple > outerWidth) && innerWidth * multiple > outerHeight) {
+                    transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                    transY = Math.min(Math.max(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+                }
+            }else{
+                transX = Math.max(Math.min(moveX, outerWidth - innerWidth * (multiple + 1) / 2 - innerLeft), -innerLeft + innerWidth * (multiple - 1) / 2)
+                transY = Math.max(Math.min(moveY, outerHeight - innerHeight * (multiple + 1) / 2 - innerTop), -innerTop + innerHeight * (multiple - 1) / 2)
+            }
+            container.style.transform = `matrix(${multiple}, 0, 0, ${multiple}, ${transX}, ${transY})`
+
+        }
+
+        function stopDrag() {
+            document.onmousemove = null;
+        }
+
+        function mouseLeave() {
+            stopDrag()
+        }
     var mySwiper = new Swiper ('.swiper-container', {
         // If we need pagination
         pagination: {
@@ -777,6 +898,9 @@
         $("#header .nav").toggleClass('active');
 
     });
+
+
+
 
 
 </script>
