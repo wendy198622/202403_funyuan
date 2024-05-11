@@ -1931,6 +1931,7 @@ section .architecture-inside .content .plan .zoom .zoom_list i {
 section .architecture-inside .content .photo {
   width: calc(1460/1920*100%);
   margin-right: 60px;
+  background: #fffae0;
 }
 
 section .architecture-inside .content .photo .item {
