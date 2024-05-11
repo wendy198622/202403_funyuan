@@ -1297,7 +1297,10 @@ section{
                 width: calc(1460/1920*100%);
                 margin-right: 60px;
                 background: #fffae0;
-                overflow: hidden;
+                overflow: hidden !important;
+                .photo-container{
+                    width: 100%;
+                }
                 .item{
                     width: 100%;
                     height: 0;

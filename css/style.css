@@ -1932,7 +1932,11 @@ section .architecture-inside .content .photo {
   width: calc(1460/1920*100%);
   margin-right: 60px;
   background: #fffae0;
-  overflow: hidden;
+  overflow: hidden !important;
+}
+
+section .architecture-inside .content .photo .photo-container {
+  width: 100%;
 }
 
 section .architecture-inside .content .photo .item {

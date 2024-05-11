@@ -103,22 +103,24 @@
                     </div>
                 </div>
                 <div class="photo js_height">
-                    <div class="item"></div>
-                    <div class="item">
-                        <div class="link link_a1"></div>
-                        <div class="link link_a2"></div>
-                        <div class="link link_a3"></div>
+                    <div class="photo-container">
+                        <div class="item"></div>
+                        <div class="item">
+                            <div class="link link_a1"></div>
+                            <div class="link link_a2"></div>
+                            <div class="link link_a3"></div>
+                        </div>
+                        <div class="item active">
+                            <div class="link link_a4"></div>
+                            <div class="link link_a5"></div>
+                            <div class="link link_a6"></div>
+                        </div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <!-- <img src="img/inside_photo1.svg" alt=""> -->
                     </div>
-                    <div class="item active">
-                        <div class="link link_a4"></div>
-                        <div class="link link_a5"></div>
-                        <div class="link link_a6"></div>
-                    </div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <!-- <img src="img/inside_photo1.svg" alt=""> -->
                 </div>
             </div>
             <div class="popup popup_A1">
@@ -754,7 +756,7 @@
 
         
         // 放大div
-        var container = document.querySelector('.photo.js_height');
+        var container = document.querySelector('.photo-container');
         let transf  = getTransform(container)
         transf.multiple = 2
         container.style.transform = `matrix(${transf.multiple}, 0, 0, ${transf.multiple}, ${transf.transX}, ${transf.transY})`
